@@ -1,0 +1,306 @@
+/*
+ * Irbis design tokens — mirror of irbis-docs/design/design.md (snapshot 2026-10-16).
+ * This is the only file in src/ where raw colour, size and radius values live.
+ * Change design.md first, then this file, in the same change.
+ */
+
+/* ── Raw values ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* Core */
+  --teal: #1cb0a8;
+  --teal-700: #0c807a;
+  --teal-700-edge: #075b56;
+  --teal-icon-edge: #0e8a83;
+  --teal-tint: #e3f7f5;
+  --orange: #ff9f1c;
+  --orange-edge: #cc7a00;
+  --on-orange: #3a2200;
+  --orange-tint: #fff1da;
+  --sky: #4ca9ff;
+  --purple: #7b61ff;
+  --pine: #3daa5c;
+  --stone: #8a979c;
+  --red: #ff4b4b;
+  --red-700: #d93636;
+  --red-700-edge: #a12121;
+  --gold: #ffc800;
+  --gold-edge: #d9a500;
+  --on-gold: #6e4e00;
+  /* White text on teal-700 / red-700 fills ("white text" in design.md Core). */
+  --on-fill: #ffffff;
+
+  /* Surfaces and text — light */
+  --bg: #f7f7f2;
+  --card: #ffffff;
+  --line: #e5e5dc;
+  --ink: #1f2a2e;
+  --body: #3c4a4f;
+  --muted: #5e6e74;
+  --soft: #eef0e8;
+  --nav-active-bg: #e3f7f5;
+  --nav-active-border: #1cb0a8;
+  --nav-active-fg: #0c807a;
+  --disabled-bg: #e5e5dc;
+  --disabled-fg: #6b787d;
+
+  /* Condition status */
+  --status-go-bg: #dff6e7;
+  --status-go-fg: #1b6b3e;
+  --status-go-ring: #3daa5c;
+  --status-caution-bg: #fff1bf;
+  --status-caution-fg: #6e4e00;
+  --status-caution-ring: #ffc800;
+  --status-notnow-bg: #ffe1e1;
+  --status-notnow-fg: #b32424;
+  --status-notnow-ring: #ff4b4b;
+  --status-locked-bg: #eceeef;
+  --status-locked-fg: #56646a;
+  --status-locked-ring: #aeb8bc;
+  --status-locked-node: #c9d1d4;
+  --completed-node: #ffc800;
+  --completed-node-edge: #d9a500;
+
+  /* Place types */
+  --place-peak: #1cb0a8;
+  --place-lake: #4ca9ff;
+  --place-cave: #7b61ff;
+  --place-camping: #3daa5c;
+  --place-trail: #ff9f1c;
+
+  /* Levels: colour / edge / tint / text */
+  --level-1: #58b368;
+  --level-1-edge: #3e8e4d;
+  --level-1-tint: #e4f5e7;
+  --level-1-text: #2d6e3a;
+  --level-2: #c98b4e;
+  --level-2-edge: #a06a33;
+  --level-2-tint: #f7eadb;
+  --level-2-text: #7a4e1f;
+  --level-3: #f2802e;
+  --level-3-edge: #c9601a;
+  --level-3-tint: #ffe9d9;
+  --level-3-text: #9a4510;
+  --level-4: #1cb0a8;
+  --level-4-edge: #0e8a83;
+  --level-4-tint: #ddf5f3;
+  --level-4-text: #0c6e69;
+  --level-5: #4c7bd9;
+  --level-5-edge: #335fb8;
+  --level-5-tint: #e3ecfb;
+  --level-5-text: #2a4f9a;
+  --level-6: #7b61ff;
+  --level-6-edge: #5b42db;
+  --level-6-tint: #ece8ff;
+  --level-6-text: #4b33c4;
+  --level-7: #e5a800;
+  --level-7-edge: #b88600;
+  --level-7-tint: #fff6d6;
+  --level-7-text: #7a5800;
+  --difficulty-boot: #7a4e2d;
+
+  /* Mascot */
+  --mascot-fur: #edf0f3;
+  --mascot-rosettes: #8e99a6;
+  --mascot-backpack: #ff9f1c;
+  --mood-excited: #e3f7f5;
+  --mood-proud: #fff1da;
+  --mood-worried: #e2f0ff;
+  --mood-sleepy: #eeeaff;
+  --mood-sad: #f0f1f2;
+
+  /* Elevation */
+  --node-shadow: rgba(0, 0, 0, 0.18);
+
+  /* Motion */
+  --duration-press: 150ms;
+  --duration-enter: 200ms;
+  --duration-exit: 250ms;
+  --duration-layout: 300ms;
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
+
+  color-scheme: light;
+}
+
+/*
+ * Dark. design.md has no dark value yet for body, soft and disabled-* ("derived — confirm");
+ * until it does they alias existing dark tokens instead of inventing new values.
+ */
+[data-theme="dark"] {
+  --bg: #131d22;
+  --card: #1c2a30;
+  --line: #2b3b42;
+  --ink: #f1f5f4;
+  --body: var(--ink);
+  --muted: #9aa8ad;
+  --soft: var(--line);
+  --nav-active-bg: #123b3a;
+  --nav-active-border: #1cb0a8;
+  --nav-active-fg: #5fd6ce;
+  --disabled-bg: var(--line);
+  --disabled-fg: var(--muted);
+
+  color-scheme: dark;
+}
+
+/* ── Tailwind theme mapping ─────────────────────────────────────────────── */
+
+@theme {
+  --color-*: initial;
+  --text-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --font-sans: var(--font-nunito), ui-rounded, system-ui, sans-serif;
+
+  /* Typography (design.md › Typography) */
+  --text-stat: 48px;
+  --text-stat--line-height: 1;
+  --text-stat--font-weight: 900;
+  --text-h1: 28px;
+  --text-h1--line-height: 1.15;
+  --text-h1--font-weight: 900;
+  --text-h2: 22px;
+  --text-h2--line-height: 1.2;
+  --text-h2--font-weight: 900;
+  --text-h3: 17px;
+  --text-h3--line-height: 1.25;
+  --text-h3--font-weight: 800;
+  /* design.md `body` type style; named `copy` because `text-body` is the body colour. */
+  --text-copy: 15px;
+  --text-copy--line-height: 1.45;
+  --text-copy--font-weight: 700;
+  --text-small: 13px;
+  --text-small--line-height: 1.35;
+  --text-small--font-weight: 700;
+  --text-caption: 12px;
+  --text-caption--letter-spacing: 0.08em;
+  --text-caption--font-weight: 900;
+  --text-button: 17px;
+  --text-button--line-height: 1.15;
+  --text-button--letter-spacing: 0.05em;
+  --text-button--font-weight: 900;
+  --text-chip: 13px;
+  --text-chip--font-weight: 800;
+  --text-nav-label: 11px;
+  --text-nav-label--font-weight: 800;
+
+  /* Shape (design.md › Shape and spacing) */
+  --radius-tile: 16px;
+  --radius-card: 20px;
+  --radius-sheet: 24px;
+  --radius-pill: 999px;
+
+  /* 4 px bottom edge for buttons; colour set per variant with shadow-<edge colour>. */
+  --shadow-edge: 0 4px 0 0 var(--node-shadow);
+  --shadow-node: 0 5px 0 0 var(--node-shadow);
+
+  /* Fixed sizes from design.md (min-height 54 buttons, 28 chips, 44 touch targets). */
+  --spacing-button: 54px;
+  --spacing-chip: 28px;
+  --spacing-touch: 44px;
+
+  --ease-out: var(--ease-out-cubic);
+  --ease-in: var(--ease-in-cubic);
+}
+
+@theme inline {
+  --color-teal: var(--teal);
+  --color-teal-700: var(--teal-700);
+  --color-teal-700-edge: var(--teal-700-edge);
+  --color-teal-icon-edge: var(--teal-icon-edge);
+  --color-teal-tint: var(--teal-tint);
+  --color-orange: var(--orange);
+  --color-orange-edge: var(--orange-edge);
+  --color-on-orange: var(--on-orange);
+  --color-orange-tint: var(--orange-tint);
+  --color-sky: var(--sky);
+  --color-purple: var(--purple);
+  --color-pine: var(--pine);
+  --color-stone: var(--stone);
+  --color-red: var(--red);
+  --color-red-700: var(--red-700);
+  --color-red-700-edge: var(--red-700-edge);
+  --color-gold: var(--gold);
+  --color-gold-edge: var(--gold-edge);
+  --color-on-gold: var(--on-gold);
+  --color-on-fill: var(--on-fill);
+
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-soft: var(--soft);
+  --color-nav-active-bg: var(--nav-active-bg);
+  --color-nav-active-border: var(--nav-active-border);
+  --color-nav-active-fg: var(--nav-active-fg);
+  --color-disabled-bg: var(--disabled-bg);
+  --color-disabled-fg: var(--disabled-fg);
+
+  --color-status-go-bg: var(--status-go-bg);
+  --color-status-go-fg: var(--status-go-fg);
+  --color-status-go-ring: var(--status-go-ring);
+  --color-status-caution-bg: var(--status-caution-bg);
+  --color-status-caution-fg: var(--status-caution-fg);
+  --color-status-caution-ring: var(--status-caution-ring);
+  --color-status-notnow-bg: var(--status-notnow-bg);
+  --color-status-notnow-fg: var(--status-notnow-fg);
+  --color-status-notnow-ring: var(--status-notnow-ring);
+  --color-status-locked-bg: var(--status-locked-bg);
+  --color-status-locked-fg: var(--status-locked-fg);
+  --color-status-locked-ring: var(--status-locked-ring);
+  --color-status-locked-node: var(--status-locked-node);
+  --color-completed-node: var(--completed-node);
+  --color-completed-node-edge: var(--completed-node-edge);
+
+  --color-place-peak: var(--place-peak);
+  --color-place-lake: var(--place-lake);
+  --color-place-cave: var(--place-cave);
+  --color-place-camping: var(--place-camping);
+  --color-place-trail: var(--place-trail);
+
+  --color-level-1: var(--level-1);
+  --color-level-1-edge: var(--level-1-edge);
+  --color-level-1-tint: var(--level-1-tint);
+  --color-level-1-text: var(--level-1-text);
+  --color-level-2: var(--level-2);
+  --color-level-2-edge: var(--level-2-edge);
+  --color-level-2-tint: var(--level-2-tint);
+  --color-level-2-text: var(--level-2-text);
+  --color-level-3: var(--level-3);
+  --color-level-3-edge: var(--level-3-edge);
+  --color-level-3-tint: var(--level-3-tint);
+  --color-level-3-text: var(--level-3-text);
+  --color-level-4: var(--level-4);
+  --color-level-4-edge: var(--level-4-edge);
+  --color-level-4-tint: var(--level-4-tint);
+  --color-level-4-text: var(--level-4-text);
+  --color-level-5: var(--level-5);
+  --color-level-5-edge: var(--level-5-edge);
+  --color-level-5-tint: var(--level-5-tint);
+  --color-level-5-text: var(--level-5-text);
+  --color-level-6: var(--level-6);
+  --color-level-6-edge: var(--level-6-edge);
+  --color-level-6-tint: var(--level-6-tint);
+  --color-level-6-text: var(--level-6-text);
+  --color-level-7: var(--level-7);
+  --color-level-7-edge: var(--level-7-edge);
+  --color-level-7-tint: var(--level-7-tint);
+  --color-level-7-text: var(--level-7-text);
+  --color-difficulty-boot: var(--difficulty-boot);
+
+  --color-mascot-fur: var(--mascot-fur);
+  --color-mascot-rosettes: var(--mascot-rosettes);
+  --color-mascot-backpack: var(--mascot-backpack);
+  --color-mood-excited: var(--mood-excited);
+  --color-mood-proud: var(--mood-proud);
+  --color-mood-worried: var(--mood-worried);
+  --color-mood-sleepy: var(--mood-sleepy);
+  --color-mood-sad: var(--mood-sad);
+
+  --color-transparent: transparent;
+  --color-current: currentColor;
+}

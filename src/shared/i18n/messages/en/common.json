@@ -1,0 +1,24 @@
+{
+  "appName": "Irbis Admin",
+  "metaDescription": "Irbis admin panel",
+  "skipToContent": "Skip to content",
+  "nav": {
+    "label": "Main navigation",
+    "dashboard": "Dashboard"
+  },
+  "env": {
+    "dev": "Development",
+    "staging": "Staging",
+    "production": "Production"
+  },
+  "offline": "You are offline. Showing the last loaded data; changes are paused until you reconnect.",
+  "errors": {
+    "title": "Something went wrong",
+    "description": "This page could not be loaded. Try again.",
+    "retry": "Try again",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page you are looking for does not exist.",
+    "backHome": "Go to dashboard"
+  },
+  "loading": "Loading…"
+}

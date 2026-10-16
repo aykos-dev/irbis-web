@@ -10,3 +10,10 @@ coverage/
 .env.*
 !.env.example
 .claude/settings.local.json
+
+# Next.js
+/out/
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+*.pem

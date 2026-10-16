@@ -1,0 +1,24 @@
+{
+  "appName": "Irbis Admin",
+  "metaDescription": "Irbis boshqaruv paneli",
+  "skipToContent": "Asosiy qismga o‘tish",
+  "nav": {
+    "label": "Asosiy navigatsiya",
+    "dashboard": "Boshqaruv paneli"
+  },
+  "env": {
+    "dev": "Ishlab chiqish",
+    "staging": "Sinov muhiti",
+    "production": "Ishchi muhit"
+  },
+  "offline": "Internet aloqasi yo‘q. Oxirgi yuklangan ma’lumotlar ko‘rsatilmoqda; aloqa tiklanguncha o‘zgartirishlar to‘xtatilgan.",
+  "errors": {
+    "title": "Nimadir xato ketdi",
+    "description": "Sahifani yuklab bo‘lmadi. Qayta urinib ko‘ring.",
+    "retry": "Qayta urinish",
+    "notFoundTitle": "Sahifa topilmadi",
+    "notFoundDescription": "Siz qidirayotgan sahifa mavjud emas.",
+    "backHome": "Boshqaruv paneliga o‘tish"
+  },
+  "loading": "Yuklanmoqda…"
+}

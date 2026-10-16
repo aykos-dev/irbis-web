@@ -16,22 +16,25 @@ Companion documents — both mandatory:
 ## Tech Stack
 
 Pinned. Do not substitute or add libraries without explicit approval (recorded here or as an ADR).
-Versions are latest stable as of 2026-10-16 — replace with exact installed versions at scaffold time.
+Exact versions installed at scaffold time (2026-10-17, Node 22); `package.json` pins them without `^`
+(`.npmrc` has `save-exact=true`).
 
 | Layer | Technology | Version |
 | ----- | ---------- | ------- |
-| **Framework** | Next.js (App Router, Turbopack) + React | 16.x / 19.3 |
-| **Language** | TypeScript strict | per `PROJECT.md` |
-| **Server state** | TanStack Query 5 | 5.x |
-| **API client** | **orval**-generated hooks + zod schemas over **axios** | orval 8 / axios 1.x |
-| **Tables** | TanStack Table | 9.x |
-| **Forms** | react-hook-form + zod | 7.x / 4.x |
-| **Styling** | Tailwind CSS 4 + tokens as CSS variables | 4.x |
-| **Primitives** | shadcn/ui (Radix-based, copied into `shared/components/ui`) | — |
-| **Icons** | lucide-react | — |
-| **Toasts** | sonner | 2.x |
-| **i18n** | next-intl | 4.x |
-| **Tests** | Vitest + Testing Library + MSW | 5 / — / 3 |
+| **Framework** | Next.js (App Router, Turbopack, `cacheComponents`) + React / React DOM | 16.4.2 / 19.3.0 |
+| **Language** | TypeScript strict (+ `noUncheckedIndexedAccess`) | 5.9.3 |
+| **Server state** | @tanstack/react-query | 5.104.3 |
+| **API client** | **orval**-generated hooks + zod schemas over **axios** | orval 8.43.0 / axios 1.20.0 |
+| **Tables** | TanStack Table | 9.x — installed with the first table |
+| **Forms** | react-hook-form + zod | 7.90.0 / 4.6.7 |
+| **Styling** | Tailwind CSS 4 via `@tailwindcss/turbopack` (no PostCSS) + tokens as CSS variables | 4.3.3 |
+| **Class utilities** | class-variance-authority · `cn` (shadcn's clsx + tailwind-merge replacement) | 0.7.1 · 0.5.0 |
+| **Primitives** | shadcn/ui CLI (style `radix-nova`, copied into `shared/components/ui`) · radix-ui · tw-animate-css | 4.22.0 · 1.8.1 · 1.4.0 |
+| **Icons** | lucide-react | 1.58.0 |
+| **Toasts** | sonner | 2.0.8 |
+| **i18n** | next-intl | 4.14.9 |
+| **Tests** | Vitest · @testing-library/react / dom / jest-dom · jsdom · MSW · axe-core | 5.0.5 · 16.3.3 / 10.4.2 / 7.0.1 · 30.1.3 · 3.0.3 · 4.14.0 |
+| **Lint** | ESLint (flat) + eslint-config-next · eslint-plugin-boundaries | 9.39.5 + 16.4.2 · 7.2.0 |
 
 **Planned — approve when needed:** map picker for spot location (`react-map-gl`/MapLibre or Google
 Maps JS — decide with the spots feature), charts library (first report), Playwright (E2E).
@@ -60,6 +63,8 @@ metadata, static shell       forms, tables, dialogs, toasts
 irbis-web/
 ├── next.config.ts            # security headers, images, next-intl plugin
 ├── orval.config.ts           # input ../irbis-api/openapi.json → src/shared/api/generated
+├── vitest.config.mts         # jsdom, setup in test/, NEXT_PUBLIC_* test values
+├── test/                     # setup.ts (jest-dom, MSW server, matchMedia), render.tsx, axe.ts
 └── src/
     ├── proxy.ts              # Auth redirect (UX only) + locale handling
     ├── app/
@@ -213,6 +218,12 @@ npm run gen:api     # orval → src/shared/api/generated (react-query + zod)
 | 3 | Token storage | Access token in memory; refresh token httpOnly cookie (ADR-001). |
 | 4 | UI kit | shadcn/ui primitives owned in-repo on Tailwind 4 + tokens. |
 | 5 | List state | URL search params. |
+
+Scaffold notes (M0): file names are kebab-case (`offline-banner.tsx`, shadcn convention), hooks
+camelCase (`useNetworkStatus.ts`). Dev server runs on **:3001** because irbis-api uses :3000.
+`AuthProvider`, `shared/api/auth.ts`, `proxy.ts` and the `(auth)/login` route land with the auth feature;
+React Query Devtools are not installed (needs approval). The design.md `body` type style is the Tailwind
+utility `text-copy` because `text-body` is the body colour.
 
 > Extend this doc as pages land: add routes to **Directory Structure**, entities to **Domain Model**,
 > libraries to **Tech Stack** with their approval.

@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "./tokens.css";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@layer base {
+  html {
+    @apply bg-bg font-sans text-copy text-body antialiased;
+  }
+
+  body {
+    @apply min-h-dvh bg-bg;
+  }
+
+  *,
+  ::before,
+  ::after {
+    @apply border-line;
+  }
+
+  :focus-visible {
+    @apply outline-3 outline-offset-2 outline-teal;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
