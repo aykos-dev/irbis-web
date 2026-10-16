@@ -1,8 +1,10 @@
 # irbis-web — Architecture
 
-The Irbis **admin panel**: staff manage spots (create, verify, edit), review check-ins and XP, and
-see per-spot stats. Desktop-first, used by a small number of authenticated admins. No public
-pages, no SEO. (Product summary: `irbis-docs/PROJECT.md`.)
+The Irbis **admin panel** for the Irbis team: places, trails and closures, condition overrides, lesson content,
+game config (XP table, level requirements, caps), spot verification, moderation queue, operator commissions and
+settings. Later also the **operator dashboard** (`design/canvas/OperatorDash.dc.html`, 1440 px). Desktop-first,
+authenticated staff only, no public pages, no SEO. The admin panel has **no design yet** — built from the design
+tokens and shadcn/ui primitives until one exists. (Product summary: `irbis-docs/PROJECT.md`.)
 
 Companion documents — both mandatory:
 
@@ -68,20 +70,14 @@ irbis-web/
     │   └── (admin)/
     │       ├── layout.tsx    # Shell: sidebar, header, OfflineBanner
     │       ├── page.tsx      # Dashboard
-    │       ├── spots/
-    │       │   ├── page.tsx            # list
-    │       │   ├── new/page.tsx
-    │       │   └── [spotId]/page.tsx   # detail / edit
-    │       ├── check-ins/page.tsx
-    │       ├── users/[userId]/page.tsx
+    │       ├── places/  closures/  lessons/  config/   # Phase 1 routes
+    │       ├── spots/  moderation/  operators/         # Phase 2+ routes
     │       ├── error.tsx  loading.tsx  not-found.tsx
     │
-    ├── features/             # Vertical slices — same slug as irbis-api / irbis-app
-    │   ├── auth/
-    │   ├── dashboard/
-    │   ├── spots/
-    │   ├── spot-checkin/     # admin views of check-ins (counts per spot, history)
-    │   └── users/
+    ├── features/             # Vertical slices — same slug as irbis-api / irbis-app (ROADMAP.md)
+    │   ├── auth/  dashboard/
+    │   ├── places/  conditions/  lessons/  game-config/
+    │   └── …                 # spot-verification, moderation, operator-dashboard later
     │
     └── shared/
         ├── api/
@@ -129,17 +125,12 @@ features/<slug>/
 
 ## Domain Model (admin view)
 
-Provisional — the OpenAPI spec is authoritative.
-
-```
-Spot      { id, name, description, location: { lat, lng }, radiusM, verified, photoUrls[], createdAt }
-CheckIn   { id, spotId, userId, createdAt, xpAwarded }
-User      { id, displayName, xp, role: 'user' | 'admin', createdAt }
-SpotStats { spotId, checkInsTotal, checkInsToday, uniqueUsers }
-```
-
-Admin surfaces show **aggregates by default**. Individual user records appear only where a spec
-needs them (e.g. support lookup), never as bulk exports.
+The API's domain model is authoritative (generated types). Admin work in Phase 1: Places (+ trails, waypoints,
+season months, hazards, required level, difficulty), Closures and condition overrides, Lessons (tiers, cards),
+GameConfig (XP table, level requirements, daily caps, weekly chest rule). Phase 2+: SpotSubmissions and official
+verification, Reports and ModerationActions, Operators and CommissionRules.
+Admin views show **aggregates by default**; individual user records only where a spec needs them (support lookup,
+moderation), never bulk exports.
 
 ---
 
