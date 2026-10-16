@@ -1,24 +1,31 @@
 # irbis-web
 
-Next.js (App Router) admin panel. Project-wide rules: `../irbis-docs/CLAUDE.md`. Versions: `../irbis-docs/PROJECT.md`.
+Next.js (App Router) admin panel. Desktop-first, authenticated admins only.
+
+**Before any change read:** `docs/architecture.md` (structure, stack, decisions) and
+`docs/engineering-standards.md` (definition of done — its Quick gate must pass).
+Project-wide rules: `../irbis-docs/CLAUDE.md`. Tokens: `../irbis-docs/design/design.md`.
+Next.js 16 changed APIs (e.g. `proxy.ts` replaces `middleware.ts`) — check Context7 when unsure.
 
 ## Commands
-- `npm run check` — lint + typecheck + tests + slop grep, failures only. Must be green before "done".
-- `npm run gen:api` — orval from `../irbis-api/openapi.json` → `src/api/generated/`. Never edit generated files.
-- `npm run test -- <path>` — single test file.
+- `npm run check` — lint + typecheck + tests + slop grep, failures only. Green before "done".
+- `npm run gen:api` — orval from `../irbis-api/openapi.json` → `src/shared/api/generated/`. Never edit generated files.
+- `npm run test -- <path>` — single test file (Vitest).
+- `npm run dev` — local dev server.
 
-## Layout
-- `src/app/` — routes only; thin, import from features.
-- `src/features/<slug>/` — components, hooks, forms for that feature. No imports from other features.
-- `src/api/generated/` — typed client + TanStack Query hooks. The only way to call the API.
-- `src/components/ui/` — shared primitives. `src/theme/tokens.ts` — all colours/spacing/type.
+## Layout (details in docs/architecture.md)
+- `src/app/` — routes only (`(auth)`, `(admin)`); thin `page.tsx` renders one feature component.
+- `src/features/<slug>/` — client components, hooks, columns, schemas. Never import another feature.
+- `src/shared/` — api (client, generated, auth), components (`ui/`, `layout/`), hooks, i18n, lib, styles (tokens.css).
 
 ## Shared modules — check before creating anything new
-<!-- Keep this list current. -->
-- `src/components/ui/` — Button, Input, Table, Dialog, EmptyState, ErrorState, Spinner, Toast
-- `src/lib/` — formatDate, formatNumber, cn
-- `src/api/mutator.ts` — the single HTTP client (auth header, refresh, error mapping)
+- `shared/components/ui/` — Button, Input, Select, Dialog, ConfirmDialog, DataTable, Skeleton, EmptyState, ErrorState, Badge, Toaster
+- `shared/components/layout/` — Sidebar, Header, PageHeader, OfflineBanner
+- `shared/lib/` — cn, format (Intl), geo, dates
+- `shared/hooks/` — useDebounce, useUrlState, useNetworkStatus, usePermission
+- `shared/api/client.ts` — the only axios instance
 
-## Errors and states
-Every data view: loading, empty, error (with retry). Mutations show toast on error.
-Route-level `error.tsx` boundaries. No `console.log` as handling, no swallowed errors.
+## Non-negotiables (from the standards)
+Generated hooks only · four data states + filtered-empty · toasts on mutations · URL holds list state ·
+tokens only, no arbitrary Tailwind values · keyboard-operable + labelled · next-intl for every string ·
+access token in memory, never localStorage.
