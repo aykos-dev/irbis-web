@@ -1,0 +1,17 @@
+{
+  "title": "API status",
+  "description": "Reachability of the Irbis API and its database.",
+  "loading": "Checking the API…",
+  "apiUp": "API is up",
+  "dbUp": "Database is up",
+  "dbDown": "Database is down",
+  "version": "v{version}",
+  "checkedAt": "Checked {time}",
+  "degraded": "The API answers, but the database is unreachable. Places, lessons and settings cannot be loaded or saved.",
+  "errorTitle": "The API is unreachable",
+  "errorDescription": "We could not reach the Irbis API. Check that it is running, then try again.",
+  "retry": "Try again",
+  "retrying": "Checking…",
+  "offlineNoData": "You are offline. The API status will be checked when you reconnect.",
+  "stale": "Last known status — it may be out of date."
+}

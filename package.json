@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:ci": "vitest run --reporter=dot --silent",
     "slop": "! grep -rnE 'TODO|FIXME|@ts-ignore|@ts-expect-error|eslint-disable|\\bmock' src --include='*.ts' --include='*.tsx' --exclude-dir=__tests__ --exclude='*.spec.*' --exclude='*.test.*' --exclude-dir=generated && ! grep -rnE '(-|[[:space:]\"`])\\[(#|[0-9])' src --include='*.tsx' --include='*.ts' --exclude-dir=generated",
-    "check": "npm run -s lint && npm run -s typecheck && npm run -s test:ci && npm run -s slop"
+    "check": "npm run -s lint && npm run -s typecheck && npm run -s test:ci && npm run -s slop",
+    "gen:api": "orval"
   },
   "dependencies": {
     "@tanstack/react-query": "5.104.3",

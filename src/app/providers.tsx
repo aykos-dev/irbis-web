@@ -1,6 +1,6 @@
 "use client";
 
-import { QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider, type QueryClient } from "@tanstack/react-query";
 import { NextIntlClientProvider, type AbstractIntlMessages } from "next-intl";
 import { useState, type ReactNode } from "react";
 
@@ -14,12 +14,14 @@ type ProvidersProps = {
   locale: Locale;
   messages: AbstractIntlMessages;
   timeZone: string;
+  /** Injected by tests; the app creates its own. */
+  queryClient?: QueryClient;
   children: ReactNode;
 };
 
 /** Order per docs/architecture.md › Provider Hierarchy. */
-export function Providers({ locale, messages, timeZone, children }: ProvidersProps) {
-  const [queryClient] = useState(createQueryClient);
+export function Providers({ locale, messages, timeZone, queryClient: injectedClient, children }: ProvidersProps) {
+  const [queryClient] = useState(() => injectedClient ?? createQueryClient());
   setApiLocale(locale);
 
   return (

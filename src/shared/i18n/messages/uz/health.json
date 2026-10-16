@@ -1,0 +1,17 @@
+{
+  "title": "API holati",
+  "description": "Irbis API va uning ma’lumotlar bazasi mavjudligi.",
+  "loading": "API tekshirilmoqda…",
+  "apiUp": "API ishlayapti",
+  "dbUp": "Ma’lumotlar bazasi ishlayapti",
+  "dbDown": "Ma’lumotlar bazasi ishlamayapti",
+  "version": "v{version}",
+  "checkedAt": "Tekshirildi: {time}",
+  "degraded": "API javob beryapti, lekin ma’lumotlar bazasiga ulanib bo‘lmayapti. Joylar, darslar va sozlamalarni yuklab ham, saqlab ham bo‘lmaydi.",
+  "errorTitle": "API bilan aloqa yo‘q",
+  "errorDescription": "Irbis API bilan bog‘lanib bo‘lmadi. U ishga tushirilganini tekshirib, qayta urinib ko‘ring.",
+  "retry": "Qayta urinish",
+  "retrying": "Tekshirilmoqda…",
+  "offlineNoData": "Internet aloqasi yo‘q. Aloqa tiklangach, API holati tekshiriladi.",
+  "stale": "Oxirgi ma’lum holat — u eskirgan bo‘lishi mumkin."
+}
