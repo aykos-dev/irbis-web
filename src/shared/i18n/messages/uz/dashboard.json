@@ -19,6 +19,7 @@
     "signupsRange": "oxirgi 30 kun",
     "signupsLabel": "Kunlik ro‘yxatdan o‘tishlar, oxirgi 30 kun",
     "signupsDay": "Kun",
-    "signupsCount": "Ro‘yxatdan o‘tganlar"
+    "signupsCount": "Ro‘yxatdan o‘tganlar",
+    "offlineTitle": "Internet aloqasi yo‘q"
   }
 }

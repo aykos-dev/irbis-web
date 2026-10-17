@@ -81,7 +81,8 @@
     "recoveryPhone": "Recovery phone",
     "language": "Language",
     "sessions": "Active sessions",
-    "sessionsBlocked": "(signed out when blocked)"
+    "sessionsBlocked": "(signed out when blocked)",
+    "offlineTitle": "You are offline"
   },
   "actions": {
     "title": "Actions",

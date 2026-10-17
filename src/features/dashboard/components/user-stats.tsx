@@ -1,6 +1,6 @@
 "use client";
 
-import { Users } from "lucide-react";
+import { Users, WifiOff } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import type { UserStatsResponseDto } from "@/shared/api/generated/model";
@@ -10,6 +10,7 @@ import { ErrorState } from "@/shared/components/ui/error-state";
 import { LineChart } from "@/shared/components/line-chart";
 import { Skeleton } from "@/shared/components/ui/skeleton";
 import { StatTile } from "@/shared/components/ui/stat-tile";
+import { useNetworkStatus } from "@/shared/hooks/useNetworkStatus";
 import { formatDay, formatNumber, formatPercent } from "@/shared/lib/format";
 
 import { useUserStats } from "../hooks/useUserStats";
@@ -73,7 +74,17 @@ function Loaded({ stats }: { stats: UserStatsResponseDto }) {
 /** Loading, error + retry, empty and loaded states for the dashboard aggregates (AC13). */
 export function UserStats() {
   const t = useTranslations("dashboard.stats");
+  const tCommon = useTranslations("common");
+  const { isOnline } = useNetworkStatus();
   const stats = useUserStats();
+
+  if (stats.isPending && !stats.isError && !isOnline) {
+    return (
+      <Card>
+        <EmptyState icon={WifiOff} title={t("offlineTitle")} description={tCommon("offlineNoData")} />
+      </Card>
+    );
+  }
 
   if (stats.isPending) {
     return (
@@ -104,5 +115,10 @@ export function UserStats() {
     );
   }
 
-  return <Loaded stats={stats.data} />;
+  return (
+    <>
+      {!isOnline ? <p className="text-small text-muted">{tCommon("stale")}</p> : null}
+      <Loaded stats={stats.data} />
+    </>
+  );
 }

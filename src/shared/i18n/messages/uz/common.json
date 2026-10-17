@@ -5,7 +5,8 @@
   "nav": {
     "label": "Asosiy navigatsiya",
     "dashboard": "Boshqaruv paneli",
-    "users": "Foydalanuvchilar"
+    "users": "Foydalanuvchilar",
+    "brand": "Irbis"
   },
   "env": {
     "dev": "Ishlab chiqish",
@@ -24,5 +25,7 @@
   },
   "loading": "Yuklanmoqda…",
   "cancel": "Bekor qilish",
-  "working": "Bajarilmoqda…"
+  "working": "Bajarilmoqda…",
+  "offlineNoData": "Internet aloqasi yo‘q. Aloqa tiklanganda yuklanadi.",
+  "stale": "Oxirgi yuklangan ma’lumotlar ko‘rsatilmoqda — ular eskirgan bo‘lishi mumkin."
 }

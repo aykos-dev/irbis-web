@@ -72,6 +72,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const startSession = useCallback((session: AdminSessionResponseDto) => {
     setAccessToken(session.accessToken);
+    setSessionHint();
     setMe(session.me);
     setStatus("authenticated");
   }, []);

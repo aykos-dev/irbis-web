@@ -1,4 +1,5 @@
-import { fireEvent, screen, within } from "@testing-library/react";
+import { onlineManager } from "@tanstack/react-query";
+import { act, fireEvent, screen, within } from "@testing-library/react";
 import { http, HttpResponse } from "msw";
 import { describe, expect, it } from "vitest";
 
@@ -74,5 +75,27 @@ describe("AC13 · dashboard", () => {
 
     expect(await screen.findByText("No users yet")).toBeInTheDocument();
     expect(screen.queryByTestId("admin.stat-total")).not.toBeInTheDocument();
+  });
+
+  it("says it is offline instead of an endless skeleton, then loads on reconnect", async () => {
+    onlineManager.setOnline(false);
+    server.use(http.get(URL, () => HttpResponse.json(STATS)));
+    renderWithProviders(<UserStats />);
+
+    expect(screen.getByText("You are offline")).toBeInTheDocument();
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
+
+    act(() => onlineManager.setOnline(true));
+    expect(await screen.findByTestId("admin.stat-total")).toBeInTheDocument();
+  });
+
+  it("keeps cached numbers visible and marked stale while offline", async () => {
+    server.use(http.get(URL, () => HttpResponse.json(STATS)));
+    renderWithProviders(<UserStats />);
+    await screen.findByTestId("admin.stat-total");
+
+    act(() => onlineManager.setOnline(false));
+    expect(screen.getByTestId("admin.stat-total")).toBeInTheDocument();
+    expect(screen.getByText(/may be out of date/i)).toBeInTheDocument();
   });
 });

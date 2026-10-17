@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
+import { BrandMark } from "@/shared/components/layout/brand-mark";
 import { cn } from "@/shared/lib/cn";
 
 type NavItem = {
@@ -29,6 +30,10 @@ export function Sidebar({ footer }: { footer?: ReactNode }) {
 
   return (
     <nav aria-label={t("label")} className="flex w-64 shrink-0 flex-col gap-1 border-e-2 border-line bg-card p-4">
+      <div className="flex items-center gap-2.5 px-1.5 pb-4">
+        <BrandMark size={40} />
+        <span className="text-h3 text-ink">{t("brand")}</span>
+      </div>
       <ul className="flex flex-col gap-1">
         {NAV_ITEMS.map(({ href, labelKey, icon: Icon }) => {
           const active = isActive(pathname, href);

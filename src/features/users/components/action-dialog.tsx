@@ -14,6 +14,7 @@ import type { z } from "zod";
 
 import { ApiError } from "@/shared/api/errors";
 import { ConfirmDialog } from "@/shared/components/ui/confirm-dialog";
+import { useNetworkStatus } from "@/shared/hooks/useNetworkStatus";
 import { toast } from "@/shared/components/ui/toaster";
 import { zodResolver } from "@/shared/lib/zodResolver";
 
@@ -80,6 +81,7 @@ export function ActionDialog<TValues extends FieldValues>({
   fieldForCode,
 }: ActionDialogProps<TValues>) {
   const t = useTranslations("users");
+  const { isOnline } = useNetworkStatus();
   const [pending, setPending] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const form = useForm<TValues>({
@@ -99,6 +101,10 @@ export function ActionDialog<TValues extends FieldValues>({
   }
 
   async function submit(values: TValues) {
+    if (!isOnline) {
+      setFormError(t("errors.offline"));
+      return;
+    }
     setPending(true);
     setFormError(null);
     try {

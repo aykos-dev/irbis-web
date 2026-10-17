@@ -19,6 +19,7 @@
     "signupsRange": "last 30 days",
     "signupsLabel": "Sign-ups per day, last 30 days",
     "signupsDay": "Day",
-    "signupsCount": "Sign-ups"
+    "signupsCount": "Sign-ups",
+    "offlineTitle": "You are offline"
   }
 }

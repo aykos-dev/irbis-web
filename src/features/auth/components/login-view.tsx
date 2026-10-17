@@ -1,12 +1,12 @@
 "use client";
 
-import { Mountain } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { ApiError, getRetryAfterSec } from "@/shared/api/errors";
+import { BrandMark } from "@/shared/components/layout/brand-mark";
 import { Button } from "@/shared/components/ui/button";
 import { Card } from "@/shared/components/ui/card";
 import { Field, Input } from "@/shared/components/ui/field";
@@ -94,9 +94,7 @@ export function LoginView() {
   return (
     <Card className="w-full max-w-md gap-5 p-8">
       <div className="flex items-center gap-3">
-        <span className="flex size-13 items-center justify-center rounded-tile bg-teal-700 text-on-fill shadow-edge shadow-teal-icon-edge">
-          <Mountain aria-hidden="true" className="size-7" strokeWidth={2.5} />
-        </span>
+        <BrandMark size={52} />
         <div>
           <h1 className="text-h2 text-ink">{t("login.title")}</h1>
           <p className="text-small text-muted">{t("login.subtitle")}</p>

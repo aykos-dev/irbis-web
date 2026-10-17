@@ -81,7 +81,8 @@
     "recoveryPhone": "Tiklash raqami",
     "language": "Til",
     "sessions": "Faol seanslar",
-    "sessionsBlocked": "(bloklanganda chiqarilgan)"
+    "sessionsBlocked": "(bloklanganda chiqarilgan)",
+    "offlineTitle": "Internet aloqasi yo‘q"
   },
   "actions": {
     "title": "Amallar",

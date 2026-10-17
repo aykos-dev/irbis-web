@@ -27,6 +27,7 @@ const RESET_PAGING = { cursor: null, back: null } as const;
 /** Canvas W4: search + filters + sortable table + cursor pagination; everything in the URL (AC14). */
 export function UsersListView() {
   const t = useTranslations("users");
+  const tCommon = useTranslations("common");
   const locale = useLocale();
   const { isOnline } = useNetworkStatus();
   const { params, update } = useUrlState();
@@ -166,6 +167,8 @@ export function UsersListView() {
         </Field>
       </Card>
 
+      {data && !isOnline ? <p className="text-small text-muted">{tCommon("stale")}</p> : null}
+
       <Card className="gap-0 p-2">
         {list.isError && !data ? (
           <ErrorState
@@ -174,7 +177,7 @@ export function UsersListView() {
             onRetry={() => void list.refetch()}
             retrying={list.isFetching}
           />
-        ) : list.isPending && !isOnline ? (
+        ) : list.isPending && !list.isError && !isOnline ? (
           <EmptyState icon={Users} title={t("list.offlineTitle")} description={t("list.offlineDescription")} />
         ) : data && data.items.length === 0 ? (
           filtered ? (

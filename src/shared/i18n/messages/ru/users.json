@@ -81,7 +81,8 @@
     "recoveryPhone": "Номер для восстановления",
     "language": "Язык",
     "sessions": "Активные сеансы",
-    "sessionsBlocked": "(выход при блокировке)"
+    "sessionsBlocked": "(выход при блокировке)",
+    "offlineTitle": "Нет подключения к сети"
   },
   "actions": {
     "title": "Действия",

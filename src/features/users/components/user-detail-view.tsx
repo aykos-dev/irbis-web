@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, UserX } from "lucide-react";
+import { ArrowLeft, UserX, WifiOff } from "lucide-react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import type { ReactNode } from "react";
@@ -13,6 +13,7 @@ import { Card, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { EmptyState } from "@/shared/components/ui/empty-state";
 import { ErrorState } from "@/shared/components/ui/error-state";
 import { Skeleton } from "@/shared/components/ui/skeleton";
+import { useNetworkStatus } from "@/shared/hooks/useNetworkStatus";
 import { formatDate, formatNumber, formatRelative } from "@/shared/lib/format";
 
 import { useUserDetail } from "../hooks/useUserDetail";
@@ -34,6 +35,8 @@ function Fact({ label, children, testId }: { label: string; children: ReactNode;
 /** Canvas W5: facts, actions, audit log. Phones appear only as the API masks them. */
 export function UserDetailView({ userId }: { userId: string }) {
   const t = useTranslations("users");
+  const tCommon = useTranslations("common");
+  const { isOnline } = useNetworkStatus();
   const tReasons = useTranslations("users.reasons");
   const locale = useLocale();
   const { me } = useSession();
@@ -45,6 +48,17 @@ export function UserDetailView({ userId }: { userId: string }) {
       {t("detail.back")}
     </Link>
   );
+
+  if (detail.isPending && !detail.isError && !isOnline) {
+    return (
+      <div className="flex flex-col gap-4">
+        {back}
+        <Card>
+          <EmptyState icon={WifiOff} title={t("detail.offlineTitle")} description={tCommon("offlineNoData")} />
+        </Card>
+      </div>
+    );
+  }
 
   if (detail.isPending) {
     return (
@@ -108,6 +122,7 @@ export function UserDetailView({ userId }: { userId: string }) {
   return (
     <div className="flex flex-col gap-6">
       {back}
+      {!isOnline ? <p className="text-small text-muted">{tCommon("stale")}</p> : null}
       <PageHeader
         title={user.username}
         description={summary}

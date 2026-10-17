@@ -5,7 +5,8 @@
   "nav": {
     "label": "Main navigation",
     "dashboard": "Dashboard",
-    "users": "Users"
+    "users": "Users",
+    "brand": "Irbis"
   },
   "env": {
     "dev": "Development",
@@ -24,5 +25,7 @@
   },
   "loading": "Loading…",
   "cancel": "Cancel",
-  "working": "Working…"
+  "working": "Working…",
+  "offlineNoData": "You are offline. This loads when you reconnect.",
+  "stale": "Showing the last loaded data — it may be out of date."
 }
