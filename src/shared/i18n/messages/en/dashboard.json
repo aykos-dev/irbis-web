@@ -1,4 +1,24 @@
 {
   "title": "Dashboard",
-  "subtitle": "Service status and key numbers for the Irbis team."
+  "subtitle": "Users at a glance, plus service status.",
+  "aggregatesOnly": "Aggregates only — individual accounts are in Users.",
+  "stats": {
+    "loading": "Loading user numbers…",
+    "errorTitle": "User numbers could not be loaded",
+    "errorDescription": "Check your connection, then try again.",
+    "emptyTitle": "No users yet",
+    "emptyDescription": "Numbers and the sign-up chart appear after the first account is created.",
+    "total": "Total users",
+    "newToday": "New today",
+    "new7d": "New in 7 days",
+    "active7d": "Active in 7 days",
+    "activeShare": "{percent}% of users",
+    "blocked": "Blocked",
+    "withPhone": "With recovery phone",
+    "signupsTitle": "Sign-ups per day",
+    "signupsRange": "last 30 days",
+    "signupsLabel": "Sign-ups per day, last 30 days",
+    "signupsDay": "Day",
+    "signupsCount": "Sign-ups"
+  }
 }

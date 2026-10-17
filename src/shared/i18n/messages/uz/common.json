@@ -4,7 +4,8 @@
   "skipToContent": "Asosiy qismga o‘tish",
   "nav": {
     "label": "Asosiy navigatsiya",
-    "dashboard": "Boshqaruv paneli"
+    "dashboard": "Boshqaruv paneli",
+    "users": "Foydalanuvchilar"
   },
   "env": {
     "dev": "Ishlab chiqish",
@@ -18,7 +19,10 @@
     "retry": "Qayta urinish",
     "notFoundTitle": "Sahifa topilmadi",
     "notFoundDescription": "Siz qidirayotgan sahifa mavjud emas.",
-    "backHome": "Boshqaruv paneliga o‘tish"
+    "backHome": "Boshqaruv paneliga o‘tish",
+    "retrying": "Qayta urinilmoqda…"
   },
-  "loading": "Yuklanmoqda…"
+  "loading": "Yuklanmoqda…",
+  "cancel": "Bekor qilish",
+  "working": "Bajarilmoqda…"
 }

@@ -1,25 +1,29 @@
 "use client";
 
-import { LayoutDashboard, type LucideIcon } from "lucide-react";
+import { LayoutDashboard, Users, type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import type { ReactNode } from "react";
 
 import { cn } from "@/shared/lib/cn";
 
 type NavItem = {
-  href: "/";
-  labelKey: "dashboard";
+  href: "/" | "/users";
+  labelKey: "dashboard" | "users";
   icon: LucideIcon;
 };
 
-const NAV_ITEMS: readonly NavItem[] = [{ href: "/", labelKey: "dashboard", icon: LayoutDashboard }];
+const NAV_ITEMS: readonly NavItem[] = [
+  { href: "/", labelKey: "dashboard", icon: LayoutDashboard },
+  { href: "/users", labelKey: "users", icon: Users },
+];
 
 function isActive(pathname: string, href: string): boolean {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function Sidebar() {
+export function Sidebar({ footer }: { footer?: ReactNode }) {
   const t = useTranslations("common.nav");
   const pathname = usePathname();
 
@@ -47,6 +51,7 @@ export function Sidebar() {
           );
         })}
       </ul>
+      {footer ? <div className="mt-auto">{footer}</div> : null}
     </nav>
   );
 }

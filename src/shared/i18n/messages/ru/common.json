@@ -4,7 +4,8 @@
   "skipToContent": "Перейти к содержимому",
   "nav": {
     "label": "Основная навигация",
-    "dashboard": "Обзор"
+    "dashboard": "Обзор",
+    "users": "Пользователи"
   },
   "env": {
     "dev": "Разработка",
@@ -18,7 +19,10 @@
     "retry": "Повторить",
     "notFoundTitle": "Страница не найдена",
     "notFoundDescription": "Такой страницы не существует.",
-    "backHome": "К обзору"
+    "backHome": "К обзору",
+    "retrying": "Повторяем…"
   },
-  "loading": "Загрузка…"
+  "loading": "Загрузка…",
+  "cancel": "Отмена",
+  "working": "Выполняется…"
 }

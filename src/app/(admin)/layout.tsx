@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 
+import { AdminGate } from "@/features/auth/components/admin-gate";
+import { SessionMenu } from "@/features/auth/components/session-menu";
 import { Header } from "@/shared/components/layout/header";
 import { OfflineBanner } from "@/shared/components/layout/offline-banner";
 import { Sidebar } from "@/shared/components/layout/sidebar";
@@ -19,9 +21,13 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
       <Header />
       <OfflineBanner />
       <div className="flex flex-1">
-        <Sidebar />
+        <Suspense fallback={<div className="w-64 shrink-0 border-e-2 border-line bg-card" />}>
+          <Sidebar footer={<SessionMenu />} />
+        </Suspense>
         <main id="main" tabIndex={-1} className="flex-1 p-6">
-          {children}
+          <Suspense fallback={null}>
+            <AdminGate>{children}</AdminGate>
+          </Suspense>
         </main>
       </div>
     </div>

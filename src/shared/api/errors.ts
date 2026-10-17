@@ -97,3 +97,13 @@ export function toApiError(error: unknown): ApiError {
   const message = error instanceof Error ? error.message : String(error);
   return new ApiError({ status: null, code: CLIENT_ERROR_CODES.unknown, message });
 }
+
+/** Seconds until a retry is allowed (`ACCOUNT_LOCKED`, `RATE_LIMITED`), when the API sent it. */
+export function getRetryAfterSec(error: ApiError): number | undefined {
+  const body = error.body;
+  if (typeof body === "object" && body !== null) {
+    const value = (body as { retryAfterSec?: unknown }).retryAfterSec;
+    if (typeof value === "number" && Number.isFinite(value)) return value;
+  }
+  return undefined;
+}

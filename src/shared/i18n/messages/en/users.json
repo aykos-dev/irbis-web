@@ -1,0 +1,176 @@
+{
+  "status": {
+    "active": "Active",
+    "blocked": "Blocked",
+    "locked": "Locked"
+  },
+  "roles": {
+    "user": "User",
+    "admin": "Admin"
+  },
+  "languages": {
+    "uz": "Oʻzbekcha",
+    "ru": "Русский",
+    "en": "English"
+  },
+  "reasons": {
+    "spam": "Spam or advertising",
+    "harassment": "Harassment or hate",
+    "unsafe": "Unsafe behaviour",
+    "fake_content": "Fake places or photos",
+    "other": "Other"
+  },
+  "list": {
+    "title": "Users",
+    "subtitle": "{total} accounts",
+    "subtitleLoading": "Loading accounts…",
+    "search": "Search username",
+    "searchPlaceholder": "e.g. peak_runner",
+    "filters": {
+      "status": "Status",
+      "role": "Role",
+      "joined": "Joined",
+      "all": "All",
+      "anyTime": "Any time",
+      "joinedOptions": {
+        "today": "Today",
+        "7d": "Last 7 days",
+        "30d": "Last 30 days"
+      }
+    },
+    "columns": {
+      "username": "Username",
+      "joined": "Joined",
+      "lastActive": "Last active",
+      "status": "Status",
+      "role": "Role",
+      "recoveryPhone": "Recovery phone"
+    },
+    "tableCaption": "Users",
+    "errorTitle": "Users could not be loaded",
+    "errorDescription": "Check your connection, then try again.",
+    "offlineTitle": "You are offline",
+    "offlineDescription": "The list loads when you reconnect.",
+    "emptyTitle": "No users yet",
+    "emptyDescription": "Accounts appear here after people sign up.",
+    "emptyFilteredTitle": "No users match",
+    "emptyFilteredDescription": "Try a different search or clear the filters.",
+    "clearFilters": "Clear filters",
+    "showing": "Showing {from}–{to} of {total}",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "detail": {
+    "title": "User",
+    "back": "Users",
+    "loading": "Loading user…",
+    "notFoundTitle": "User not found",
+    "notFoundDescription": "This account does not exist or was removed.",
+    "errorTitle": "User could not be loaded",
+    "errorDescription": "Check your connection, then try again.",
+    "blockedBecause": "Blocked · {reason}",
+    "lockedFor": "Locked {minutes, plural, one {# minute} other {# minutes}}",
+    "joined": "Joined {date}",
+    "lastActive": "last active {when}",
+    "level": "Level {level}",
+    "phoneVerified": "verified",
+    "phoneUnverified": "not verified",
+    "phoneNone": "None",
+    "account": "Account",
+    "role": "Role",
+    "recoveryPhone": "Recovery phone",
+    "language": "Language",
+    "sessions": "Active sessions",
+    "sessionsBlocked": "(signed out when blocked)"
+  },
+  "actions": {
+    "title": "Actions",
+    "description": "Every action asks for a reason and is written to the audit log. Changing the password signs the user out everywhere.",
+    "block": "Block",
+    "unblock": "Unblock",
+    "setPassword": "Set password",
+    "editPhone": "Edit recovery phone",
+    "changeRole": "Change role"
+  },
+  "dialogs": {
+    "reason": "Reason",
+    "reasonHint": "Written to the audit log; seen only by admins.",
+    "note": "Note for the audit log",
+    "noteHint": "What happened (seen only by admins).",
+    "block": {
+      "title": "Block {username}?",
+      "description": "They are signed out on every phone and can't log in until unblocked. The app shows \"Your account is blocked\" with the reason.",
+      "confirm": "Block user",
+      "success": "{username} is blocked."
+    },
+    "unblock": {
+      "title": "Unblock {username}?",
+      "description": "They can log in again.",
+      "confirm": "Unblock user",
+      "success": "{username} is unblocked."
+    },
+    "password": {
+      "title": "Set a new password for {username}?",
+      "description": "The password changes permanently and the user is signed out everywhere. Share it with them through a trusted channel.",
+      "confirm": "Set password",
+      "success": "Password changed for {username}.",
+      "field": "New password",
+      "hint": "6–64 characters; not the username."
+    },
+    "phone": {
+      "title": "Edit recovery phone for {username}?",
+      "description": "The new number counts as verified at once, without an SMS code.",
+      "confirm": "Save phone",
+      "success": "Recovery phone updated for {username}.",
+      "field": "Recovery phone",
+      "hint": "+998 and 9 digits."
+    },
+    "role": {
+      "title": "Change role of {username}?",
+      "description": "Admins can use this panel and see every user. You can't change your own role.",
+      "confirm": "Change role",
+      "success": "Role changed for {username}.",
+      "field": "New role"
+    }
+  },
+  "audit": {
+    "title": "Audit log",
+    "loading": "Loading audit log…",
+    "errorTitle": "Audit log could not be loaded",
+    "errorDescription": "Check your connection, then try again.",
+    "emptyTitle": "No actions yet",
+    "emptyDescription": "Admin actions on this account will be listed here.",
+    "caption": "Audit log, newest first",
+    "columns": {
+      "when": "When",
+      "admin": "Admin",
+      "action": "Action",
+      "reason": "Reason"
+    },
+    "actions": {
+      "block": "Blocked",
+      "unblock": "Unblocked",
+      "set_password": "Changed password",
+      "set_recovery_phone": "Changed recovery phone",
+      "change_role": "Changed role"
+    }
+  },
+  "validation": {
+    "noteRequired": "Write a reason.",
+    "noteTooLong": "Keep it under 500 characters.",
+    "passwordLength": "Use 6 to 64 characters.",
+    "phoneInvalid": "Use +998 and 9 digits."
+  },
+  "errors": {
+    "PASSWORD_WEAK": "This password is too weak. Avoid the username and common passwords.",
+    "PHONE_INVALID": "This phone number is not valid. Use +998 and 9 digits.",
+    "CANNOT_CHANGE_OWN_ROLE": "You can't change your own role.",
+    "CANNOT_BLOCK_SELF": "You can't block yourself.",
+    "ALREADY_BLOCKED": "This user is already blocked.",
+    "NOT_BLOCKED": "This user is not blocked.",
+    "NOT_FOUND": "This user no longer exists.",
+    "VALIDATION_FAILED": "Check the fields and try again.",
+    "generic": "Something went wrong. Try again.",
+    "offline": "You are offline. Try again when you reconnect."
+  }
+}

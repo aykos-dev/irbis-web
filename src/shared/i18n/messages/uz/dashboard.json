@@ -1,4 +1,24 @@
 {
   "title": "Boshqaruv paneli",
-  "subtitle": "Irbis jamoasi uchun xizmat holati va asosiy ko‘rsatkichlar."
+  "subtitle": "Foydalanuvchilar ko‘rsatkichlari va xizmat holati.",
+  "aggregatesOnly": "Faqat umumiy ma’lumotlar — alohida hisoblar «Foydalanuvchilar» bo‘limida.",
+  "stats": {
+    "loading": "Foydalanuvchilar ma’lumoti yuklanmoqda…",
+    "errorTitle": "Foydalanuvchilar ma’lumotini yuklab bo‘lmadi",
+    "errorDescription": "Ulanishni tekshirib, qayta urinib ko‘ring.",
+    "emptyTitle": "Hozircha foydalanuvchilar yo‘q",
+    "emptyDescription": "Birinchi hisob yaratilgach, raqamlar va ro‘yxatdan o‘tish grafigi paydo bo‘ladi.",
+    "total": "Jami foydalanuvchilar",
+    "newToday": "Bugun yangi",
+    "new7d": "7 kunda yangi",
+    "active7d": "7 kunda faol",
+    "activeShare": "Foydalanuvchilarning {percent}%",
+    "blocked": "Bloklangan",
+    "withPhone": "Tiklash raqami borlar",
+    "signupsTitle": "Kunlik ro‘yxatdan o‘tishlar",
+    "signupsRange": "oxirgi 30 kun",
+    "signupsLabel": "Kunlik ro‘yxatdan o‘tishlar, oxirgi 30 kun",
+    "signupsDay": "Kun",
+    "signupsCount": "Ro‘yxatdan o‘tganlar"
+  }
 }

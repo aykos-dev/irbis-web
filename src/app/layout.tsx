@@ -5,6 +5,8 @@ import type { ReactNode } from "react";
 
 import "@/shared/styles/globals.css";
 
+import { AuthProvider } from "@/features/auth/components/auth-provider";
+
 import { Providers } from "./providers";
 
 const nunito = Nunito({
@@ -30,7 +32,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang={locale} data-theme="light" className={nunito.variable} suppressHydrationWarning>
       <body>
         <Providers locale={locale} messages={messages} timeZone={timeZone}>
-          {children}
+          <AuthProvider>{children}</AuthProvider>
         </Providers>
       </body>
     </html>

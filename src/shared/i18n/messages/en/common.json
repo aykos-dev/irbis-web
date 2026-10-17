@@ -4,7 +4,8 @@
   "skipToContent": "Skip to content",
   "nav": {
     "label": "Main navigation",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "users": "Users"
   },
   "env": {
     "dev": "Development",
@@ -18,7 +19,10 @@
     "retry": "Try again",
     "notFoundTitle": "Page not found",
     "notFoundDescription": "The page you are looking for does not exist.",
-    "backHome": "Go to dashboard"
+    "backHome": "Go to dashboard",
+    "retrying": "Trying again…"
   },
-  "loading": "Loading…"
+  "loading": "Loading…",
+  "cancel": "Cancel",
+  "working": "Working…"
 }

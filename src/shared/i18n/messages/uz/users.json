@@ -1,0 +1,176 @@
+{
+  "status": {
+    "active": "Faol",
+    "blocked": "Bloklangan",
+    "locked": "Vaqtincha yopiq"
+  },
+  "roles": {
+    "user": "Foydalanuvchi",
+    "admin": "Administrator"
+  },
+  "languages": {
+    "uz": "Oʻzbekcha",
+    "ru": "Русский",
+    "en": "English"
+  },
+  "reasons": {
+    "spam": "Spam yoki reklama",
+    "harassment": "Bezovta qilish yoki nafrat",
+    "unsafe": "Xavfli xatti-harakat",
+    "fake_content": "Soxta joylar yoki rasmlar",
+    "other": "Boshqa"
+  },
+  "list": {
+    "title": "Foydalanuvchilar",
+    "subtitle": "Hisoblar: {total}",
+    "subtitleLoading": "Hisoblar yuklanmoqda…",
+    "search": "Foydalanuvchi nomi bo‘yicha qidirish",
+    "searchPlaceholder": "masalan, peak_runner",
+    "filters": {
+      "status": "Holati",
+      "role": "Roli",
+      "joined": "Ro‘yxatdan o‘tgan",
+      "all": "Hammasi",
+      "anyTime": "Istalgan vaqt",
+      "joinedOptions": {
+        "today": "Bugun",
+        "7d": "Oxirgi 7 kun",
+        "30d": "Oxirgi 30 kun"
+      }
+    },
+    "columns": {
+      "username": "Foydalanuvchi nomi",
+      "joined": "Ro‘yxatdan o‘tgan",
+      "lastActive": "Oxirgi faollik",
+      "status": "Holati",
+      "role": "Roli",
+      "recoveryPhone": "Tiklash raqami"
+    },
+    "tableCaption": "Foydalanuvchilar",
+    "errorTitle": "Foydalanuvchilarni yuklab bo‘lmadi",
+    "errorDescription": "Ulanishni tekshirib, qayta urinib ko‘ring.",
+    "offlineTitle": "Internet aloqasi yo‘q",
+    "offlineDescription": "Aloqa tiklanganda ro‘yxat yuklanadi.",
+    "emptyTitle": "Hozircha foydalanuvchilar yo‘q",
+    "emptyDescription": "Odamlar ro‘yxatdan o‘tgach, hisoblar shu yerda ko‘rinadi.",
+    "emptyFilteredTitle": "Hech kim topilmadi",
+    "emptyFilteredDescription": "Boshqa qidiruvni sinab ko‘ring yoki filtrlarni tozalang.",
+    "clearFilters": "Filtrlarni tozalash",
+    "showing": "{total} tadan {from}–{to} ko‘rsatilmoqda",
+    "previous": "Oldingi",
+    "next": "Keyingi"
+  },
+  "detail": {
+    "title": "Foydalanuvchi",
+    "back": "Foydalanuvchilar",
+    "loading": "Foydalanuvchi yuklanmoqda…",
+    "notFoundTitle": "Foydalanuvchi topilmadi",
+    "notFoundDescription": "Bunday hisob yo‘q yoki o‘chirilgan.",
+    "errorTitle": "Foydalanuvchini yuklab bo‘lmadi",
+    "errorDescription": "Ulanishni tekshirib, qayta urinib ko‘ring.",
+    "blockedBecause": "Bloklangan · {reason}",
+    "lockedFor": "{minutes} daqiqaga yopiq",
+    "joined": "Ro‘yxatdan o‘tgan: {date}",
+    "lastActive": "oxirgi faollik {when}",
+    "level": "{level}-daraja",
+    "phoneVerified": "tasdiqlangan",
+    "phoneUnverified": "tasdiqlanmagan",
+    "phoneNone": "Yo‘q",
+    "account": "Hisob",
+    "role": "Roli",
+    "recoveryPhone": "Tiklash raqami",
+    "language": "Til",
+    "sessions": "Faol seanslar",
+    "sessionsBlocked": "(bloklanganda chiqarilgan)"
+  },
+  "actions": {
+    "title": "Amallar",
+    "description": "Har bir amal uchun sabab kerak va u audit jurnaliga yoziladi. Parolni almashtirish foydalanuvchini hamma joydan chiqaradi.",
+    "block": "Bloklash",
+    "unblock": "Blokdan chiqarish",
+    "setPassword": "Parol belgilash",
+    "editPhone": "Tiklash raqamini o‘zgartirish",
+    "changeRole": "Rolni o‘zgartirish"
+  },
+  "dialogs": {
+    "reason": "Sabab",
+    "reasonHint": "Audit jurnaliga yoziladi; faqat administratorlar ko‘radi.",
+    "note": "Audit jurnali uchun izoh",
+    "noteHint": "Nima bo‘ldi (faqat administratorlar ko‘radi).",
+    "block": {
+      "title": "{username} bloklansinmi?",
+      "description": "U barcha telefonlardan chiqariladi va blokdan chiqarilmaguncha kira olmaydi. Ilovada sabab bilan «Hisobingiz bloklangan» xabari ko‘rsatiladi.",
+      "confirm": "Bloklash",
+      "success": "{username} bloklandi."
+    },
+    "unblock": {
+      "title": "{username} blokdan chiqarilsinmi?",
+      "description": "U yana kira oladi.",
+      "confirm": "Blokdan chiqarish",
+      "success": "{username} blokdan chiqarildi."
+    },
+    "password": {
+      "title": "{username} uchun yangi parol belgilansinmi?",
+      "description": "Parol butunlay almashadi va foydalanuvchi barcha qurilmalardan chiqariladi. Parolni ishonchli kanal orqali yetkazing.",
+      "confirm": "Parol belgilash",
+      "success": "{username} paroli almashtirildi.",
+      "field": "Yangi parol",
+      "hint": "6–64 belgi; foydalanuvchi nomiga o‘xshamasin."
+    },
+    "phone": {
+      "title": "{username} uchun tiklash raqami o‘zgartirilsinmi?",
+      "description": "Yangi raqam SMS kodsiz darhol tasdiqlangan hisoblanadi.",
+      "confirm": "Raqamni saqlash",
+      "success": "{username} tiklash raqami yangilandi.",
+      "field": "Tiklash raqami",
+      "hint": "+998 va 9 raqam."
+    },
+    "role": {
+      "title": "{username} roli o‘zgartirilsinmi?",
+      "description": "Administratorlar shu paneldan foydalanadi va barcha foydalanuvchilarni ko‘radi. O‘z rolingizni o‘zgartira olmaysiz.",
+      "confirm": "Rolni o‘zgartirish",
+      "success": "{username} roli o‘zgartirildi.",
+      "field": "Yangi rol"
+    }
+  },
+  "audit": {
+    "title": "Audit jurnali",
+    "loading": "Jurnal yuklanmoqda…",
+    "errorTitle": "Jurnalni yuklab bo‘lmadi",
+    "errorDescription": "Ulanishni tekshirib, qayta urinib ko‘ring.",
+    "emptyTitle": "Hozircha amallar yo‘q",
+    "emptyDescription": "Bu hisob bo‘yicha administrator amallari shu yerda ko‘rinadi.",
+    "caption": "Audit jurnali, yangilari birinchi",
+    "columns": {
+      "when": "Qachon",
+      "admin": "Admin",
+      "action": "Amal",
+      "reason": "Sabab"
+    },
+    "actions": {
+      "block": "Bloklandi",
+      "unblock": "Blokdan chiqarildi",
+      "set_password": "Parol almashtirildi",
+      "set_recovery_phone": "Tiklash raqami almashtirildi",
+      "change_role": "Rol o‘zgartirildi"
+    }
+  },
+  "validation": {
+    "noteRequired": "Sababni yozing.",
+    "noteTooLong": "500 belgidan oshmasin.",
+    "passwordLength": "6 dan 64 gacha belgi kiriting.",
+    "phoneInvalid": "+998 va 9 raqam kiriting."
+  },
+  "errors": {
+    "PASSWORD_WEAK": "Parol juda oddiy. Foydalanuvchi nomi va keng tarqalgan parollardan foydalanmang.",
+    "PHONE_INVALID": "Raqam noto‘g‘ri. +998 va 9 raqam kiriting.",
+    "CANNOT_CHANGE_OWN_ROLE": "O‘z rolingizni o‘zgartira olmaysiz.",
+    "CANNOT_BLOCK_SELF": "O‘zingizni bloklay olmaysiz.",
+    "ALREADY_BLOCKED": "Bu foydalanuvchi allaqachon bloklangan.",
+    "NOT_BLOCKED": "Bu foydalanuvchi bloklanmagan.",
+    "NOT_FOUND": "Bunday foydalanuvchi endi yo‘q.",
+    "VALIDATION_FAILED": "Maydonlarni tekshirib, qayta urinib ko‘ring.",
+    "generic": "Nimadir xato ketdi. Qayta urinib ko‘ring.",
+    "offline": "Internet aloqasi yo‘q. Aloqa tiklanganda qayta urinib ko‘ring."
+  }
+}
