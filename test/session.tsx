@@ -9,6 +9,8 @@ export const ADMIN_ME: MeResponseDto = {
   id: "00000000-0000-4000-8000-000000000001",
   username: "admin_one",
   locale: "en",
+  experience: null,
+  interests: [],
   role: "admin",
   hasRecoveryPhone: false,
   recoveryPhonePending: false,

@@ -1,0 +1,142 @@
+{
+  "nav": "Условия",
+  "title": "Условия",
+  "description": "Можно / Осторожно / Не сейчас для каждого места — по прогнозу, закрытиям и ручным статусам.",
+  "status": {
+    "go": "Можно",
+    "caution": "Осторожно",
+    "not_now": "Не сейчас",
+    "seasonal_lock": "Закрыто на сезон",
+    "none": "Нет данных"
+  },
+  "source": {
+    "forecast": "Прогноз",
+    "hazard_rule": "Правило опасности",
+    "closure": "Закрытие",
+    "season": "Сезон",
+    "manual": "Ручная установка"
+  },
+  "type": {
+    "peak": "Вершина",
+    "lake": "Озеро",
+    "cave": "Пещера",
+    "camping": "Кемпинг",
+    "trail": "Тропа",
+    "waterfall": "Водопад",
+    "canyon": "Каньон"
+  },
+  "reasons": {
+    "THUNDERSTORM": "Гроза",
+    "GUSTS": "Сильные порывы",
+    "HEAVY_PRECIP": "Сильные осадки",
+    "WIND": "Сильный ветер",
+    "PRECIP_LIKELY": "Вероятны осадки",
+    "HEAT": "Жара",
+    "COLD": "Сильный мороз",
+    "MUDSLIDE_RISK": "Риск селя",
+    "FLOOD_RISK": "Риск паводка",
+    "AVALANCHE_RISK": "Лавинная опасность",
+    "GOOD_WEATHER": "Хорошая погода",
+    "CLOSURE": "Закрыто",
+    "OVERRIDE": "Установлено админом"
+  },
+  "recompute": "Пересчитать",
+  "recomputeStarted": "Пересчёт запущен",
+  "recomputeRunning": "Пересчёт уже идёт",
+  "closures": "Закрытия",
+  "addClosure": "Добавить закрытие",
+  "end": "Завершить",
+  "openEnded": "Без срока",
+  "override": "Ручной статус",
+  "setOverride": "Установить",
+  "endOverride": "Снять",
+  "field": {
+    "start": "Начало",
+    "end": "Конец",
+    "expires": "Истекает",
+    "reasonUz": "Причина (узб.)",
+    "reasonRu": "Причина (рус.)",
+    "reasonEn": "Причина (англ.)",
+    "source": "Источник",
+    "status": "Статус"
+  },
+  "sourceOfficial": "Официальное",
+  "sourceAdmin": "Админ",
+  "confirmEnd": "Завершить сейчас? Статус обновится сразу.",
+  "empty": "Нет мест по этому фильтру",
+  "updated": "Обновлено {time}",
+  "list": {
+    "caption": "Места и их условия",
+    "filter": "Статус",
+    "all": "Все",
+    "columns": {
+      "place": "Место",
+      "type": "Тип",
+      "status": "Статус",
+      "source": "Источник",
+      "updated": "Обновлено",
+      "flags": "Отметки"
+    },
+    "forecastAge": "Прогноз {time}",
+    "never": "Ещё не рассчитано",
+    "flagClosure": "Закрытие",
+    "flagOverride": "Ручной статус",
+    "loadMore": "Показать ещё",
+    "showAll": "Показать все места",
+    "emptyTitle": "Мест пока нет",
+    "emptyDescription": "Места появятся здесь после добавления.",
+    "errorTitle": "Не удалось загрузить условия",
+    "errorDescription": "Проверьте подключение и попробуйте снова.",
+    "offlineTitle": "Нет подключения",
+    "offlineDescription": "Условия загрузятся после подключения."
+  },
+  "place": {
+    "title": "Условия места",
+    "back": "Все условия",
+    "loading": "Загрузка условий…",
+    "current": "Текущее состояние",
+    "reasons": "Причины",
+    "noReasons": "Причин нет",
+    "forecastAt": "Прогноз от {time}",
+    "noForecast": "Прогноза пока нет",
+    "errorTitle": "Не удалось загрузить место",
+    "errorDescription": "Проверьте подключение и попробуйте снова.",
+    "notFoundTitle": "Место не найдено",
+    "notFoundDescription": "Возможно, оно удалено."
+  },
+  "closuresTable": {
+    "caption": "Закрытия этого места",
+    "state": "Состояние",
+    "active": "Действует",
+    "ended": "Завершено",
+    "none": "Закрытий пока нет"
+  },
+  "overrideCard": {
+    "none": "Ручного статуса нет",
+    "expires": "Истекает {time}"
+  },
+  "dialogs": {
+    "endClosure": "Завершить закрытие",
+    "endOverride": "Снять ручной статус"
+  },
+  "toasts": {
+    "closureAdded": "Закрытие добавлено",
+    "closureEnded": "Закрытие завершено",
+    "overrideSet": "Ручной статус установлен",
+    "overrideEnded": "Ручной статус снят",
+    "alreadyEnded": "Уже завершено",
+    "error": "Не получилось. Попробуйте снова.",
+    "offline": "Нет подключения. Подключитесь, чтобы вносить изменения."
+  },
+  "validation": {
+    "startRequired": "Укажите время начала.",
+    "dateInvalid": "Введите корректные дату и время.",
+    "endBeforeStart": "Конец должен быть позже начала.",
+    "reasonRequired": "Укажите причину на узбекском.",
+    "reasonTooLong": "Не больше 280 символов.",
+    "expiryRequired": "Укажите срок.",
+    "expiryPast": "Срок должен быть в будущем.",
+    "expiryTooFar": "Срок — не более 14 дней вперёд.",
+    "server": "Проверьте это поле."
+  }
+}

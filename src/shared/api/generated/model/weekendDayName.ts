@@ -6,7 +6,10 @@
  * OpenAPI spec version: 0.0.1
  */
 
-/**
- * Onboarding choices; accepted now, merged once the onboarding feature registers its handler.
- */
-export type GuestMergeDtoOnboarding = { [key: string]: unknown };
+export type WeekendDayName = typeof WeekendDayName[keyof typeof WeekendDayName];
+
+
+export const WeekendDayName = {
+  sat: 'sat',
+  sun: 'sun',
+} as const;

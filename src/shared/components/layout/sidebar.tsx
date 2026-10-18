@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutDashboard, Users, type LucideIcon } from "lucide-react";
+import { CloudSun, LayoutDashboard, Users, type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -10,14 +10,15 @@ import { BrandMark } from "@/shared/components/layout/brand-mark";
 import { cn } from "@/shared/lib/cn";
 
 type NavItem = {
-  href: "/" | "/users";
-  labelKey: "dashboard" | "users";
+  href: "/" | "/users" | "/conditions";
+  labelKey: "common.nav.dashboard" | "common.nav.users" | "conditions.nav";
   icon: LucideIcon;
 };
 
 const NAV_ITEMS: readonly NavItem[] = [
-  { href: "/", labelKey: "dashboard", icon: LayoutDashboard },
-  { href: "/users", labelKey: "users", icon: Users },
+  { href: "/", labelKey: "common.nav.dashboard", icon: LayoutDashboard },
+  { href: "/users", labelKey: "common.nav.users", icon: Users },
+  { href: "/conditions", labelKey: "conditions.nav", icon: CloudSun },
 ];
 
 function isActive(pathname: string, href: string): boolean {
@@ -25,14 +26,14 @@ function isActive(pathname: string, href: string): boolean {
 }
 
 export function Sidebar({ footer }: { footer?: ReactNode }) {
-  const t = useTranslations("common.nav");
+  const t = useTranslations();
   const pathname = usePathname();
 
   return (
-    <nav aria-label={t("label")} className="flex w-64 shrink-0 flex-col gap-1 border-e-2 border-line bg-card p-4">
+    <nav aria-label={t("common.nav.label")} className="flex w-64 shrink-0 flex-col gap-1 border-e-2 border-line bg-card p-4">
       <div className="flex items-center gap-2.5 px-1.5 pb-4">
         <BrandMark size={40} />
-        <span className="text-h3 text-ink">{t("brand")}</span>
+        <span className="text-h3 text-ink">{t("common.nav.brand")}</span>
       </div>
       <ul className="flex flex-col gap-1">
         {NAV_ITEMS.map(({ href, labelKey, icon: Icon }) => {

@@ -1,0 +1,142 @@
+{
+  "nav": "Conditions",
+  "title": "Conditions",
+  "description": "Go / Caution / Not now for every place, from the forecast, closures and overrides.",
+  "status": {
+    "go": "Go",
+    "caution": "Caution",
+    "not_now": "Not now",
+    "seasonal_lock": "Seasonal lock",
+    "none": "No data"
+  },
+  "source": {
+    "forecast": "Forecast",
+    "hazard_rule": "Hazard rule",
+    "closure": "Closure",
+    "season": "Season",
+    "manual": "Manual override"
+  },
+  "type": {
+    "peak": "Peak",
+    "lake": "Lake",
+    "cave": "Cave",
+    "camping": "Camping",
+    "trail": "Trail",
+    "waterfall": "Waterfall",
+    "canyon": "Canyon"
+  },
+  "reasons": {
+    "THUNDERSTORM": "Thunderstorm",
+    "GUSTS": "Strong gusts",
+    "HEAVY_PRECIP": "Heavy rain or snow",
+    "WIND": "Strong wind",
+    "PRECIP_LIKELY": "Rain likely",
+    "HEAT": "Heat",
+    "COLD": "Severe cold",
+    "MUDSLIDE_RISK": "Mudslide risk",
+    "FLOOD_RISK": "Flood risk",
+    "AVALANCHE_RISK": "Avalanche risk",
+    "GOOD_WEATHER": "Good weather",
+    "CLOSURE": "Closed",
+    "OVERRIDE": "Set by admin"
+  },
+  "recompute": "Recompute now",
+  "recomputeStarted": "Recompute started",
+  "recomputeRunning": "Recompute already running",
+  "closures": "Closures",
+  "addClosure": "Add closure",
+  "end": "End",
+  "openEnded": "Open-ended",
+  "override": "Override",
+  "setOverride": "Set override",
+  "endOverride": "End override",
+  "field": {
+    "start": "Starts",
+    "end": "Ends",
+    "expires": "Expires",
+    "reasonUz": "Reason (Uzbek)",
+    "reasonRu": "Reason (Russian)",
+    "reasonEn": "Reason (English)",
+    "source": "Source",
+    "status": "Status"
+  },
+  "sourceOfficial": "Official",
+  "sourceAdmin": "Admin",
+  "confirmEnd": "End this now? The status updates at once.",
+  "empty": "No places for this filter",
+  "updated": "Updated {time}",
+  "list": {
+    "caption": "Places and their conditions",
+    "filter": "Status",
+    "all": "All",
+    "columns": {
+      "place": "Place",
+      "type": "Type",
+      "status": "Status",
+      "source": "Source",
+      "updated": "Updated",
+      "flags": "Flags"
+    },
+    "forecastAge": "Forecast {time}",
+    "never": "Not computed yet",
+    "flagClosure": "Closure",
+    "flagOverride": "Override",
+    "loadMore": "Load more",
+    "showAll": "Show all places",
+    "emptyTitle": "No places yet",
+    "emptyDescription": "Places appear here once they are added.",
+    "errorTitle": "Conditions could not be loaded",
+    "errorDescription": "Check the connection and try again.",
+    "offlineTitle": "You are offline",
+    "offlineDescription": "Conditions load when you reconnect."
+  },
+  "place": {
+    "title": "Place conditions",
+    "back": "All conditions",
+    "loading": "Loading conditions…",
+    "current": "Current condition",
+    "reasons": "Reasons",
+    "noReasons": "No reasons recorded",
+    "forecastAt": "Forecast from {time}",
+    "noForecast": "No forecast yet",
+    "errorTitle": "This place could not be loaded",
+    "errorDescription": "Check the connection and try again.",
+    "notFoundTitle": "Place not found",
+    "notFoundDescription": "It may have been removed."
+  },
+  "closuresTable": {
+    "caption": "Closures of this place",
+    "state": "State",
+    "active": "Active",
+    "ended": "Ended",
+    "none": "No closures yet"
+  },
+  "overrideCard": {
+    "none": "No active override",
+    "expires": "Expires {time}"
+  },
+  "dialogs": {
+    "endClosure": "End closure",
+    "endOverride": "End override"
+  },
+  "toasts": {
+    "closureAdded": "Closure added",
+    "closureEnded": "Closure ended",
+    "overrideSet": "Override set",
+    "overrideEnded": "Override ended",
+    "alreadyEnded": "Already ended",
+    "error": "That did not work. Try again.",
+    "offline": "You are offline. Reconnect to make changes."
+  },
+  "validation": {
+    "startRequired": "Choose a start time.",
+    "dateInvalid": "Enter a valid date and time.",
+    "endBeforeStart": "The end must be after the start.",
+    "reasonRequired": "Write a reason in Uzbek.",
+    "reasonTooLong": "Keep it to 280 characters or fewer.",
+    "expiryRequired": "Choose an expiry.",
+    "expiryPast": "The expiry must be in the future.",
+    "expiryTooFar": "The expiry can be at most 14 days ahead.",
+    "server": "Check this field."
+  }
+}

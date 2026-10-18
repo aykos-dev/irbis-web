@@ -1,0 +1,142 @@
+{
+  "nav": "Holatlar",
+  "title": "Holatlar",
+  "description": "Har bir joy uchun Borsa boʻladi / Ehtiyot boʻling / Hozir emas — prognoz, yopilishlar va qoʻlda belgilangan holatlar asosida.",
+  "status": {
+    "go": "Borsa boʻladi",
+    "caution": "Ehtiyot boʻling",
+    "not_now": "Hozir emas",
+    "seasonal_lock": "Mavsumiy yopiq",
+    "none": "Maʼlumot yoʻq"
+  },
+  "source": {
+    "forecast": "Prognoz",
+    "hazard_rule": "Xavf qoidasi",
+    "closure": "Yopilish",
+    "season": "Mavsum",
+    "manual": "Qoʻlda belgilangan"
+  },
+  "type": {
+    "peak": "Choʻqqi",
+    "lake": "Koʻl",
+    "cave": "Gʻor",
+    "camping": "Kemping",
+    "trail": "Soʻqmoq",
+    "waterfall": "Sharshara",
+    "canyon": "Kanyon"
+  },
+  "reasons": {
+    "THUNDERSTORM": "Momaqaldiroq",
+    "GUSTS": "Kuchli shamol esishi",
+    "HEAVY_PRECIP": "Kuchli yogʻin",
+    "WIND": "Kuchli shamol",
+    "PRECIP_LIKELY": "Yogʻin ehtimoli",
+    "HEAT": "Issiq",
+    "COLD": "Qattiq sovuq",
+    "MUDSLIDE_RISK": "Sel xavfi",
+    "FLOOD_RISK": "Toshqin xavfi",
+    "AVALANCHE_RISK": "Qor koʻchkisi xavfi",
+    "GOOD_WEATHER": "Ob-havo yaxshi",
+    "CLOSURE": "Yopiq",
+    "OVERRIDE": "Admin belgilagan"
+  },
+  "recompute": "Qayta hisoblash",
+  "recomputeStarted": "Qayta hisoblash boshlandi",
+  "recomputeRunning": "Qayta hisoblash allaqachon ketmoqda",
+  "closures": "Yopilishlar",
+  "addClosure": "Yopilish qoʻshish",
+  "end": "Tugatish",
+  "openEnded": "Muddatsiz",
+  "override": "Qoʻlda holat",
+  "setOverride": "Oʻrnatish",
+  "endOverride": "Bekor qilish",
+  "field": {
+    "start": "Boshlanishi",
+    "end": "Tugashi",
+    "expires": "Amal qilish muddati",
+    "reasonUz": "Sabab (oʻzbekcha)",
+    "reasonRu": "Sabab (ruscha)",
+    "reasonEn": "Sabab (inglizcha)",
+    "source": "Manba",
+    "status": "Holat"
+  },
+  "sourceOfficial": "Rasmiy",
+  "sourceAdmin": "Admin",
+  "confirmEnd": "Hozir tugatilsinmi? Holat darhol yangilanadi.",
+  "empty": "Bu filtr boʻyicha joy yoʻq",
+  "updated": "Yangilangan: {time}",
+  "list": {
+    "caption": "Joylar va ularning holati",
+    "filter": "Holat",
+    "all": "Barchasi",
+    "columns": {
+      "place": "Joy",
+      "type": "Turi",
+      "status": "Holat",
+      "source": "Manba",
+      "updated": "Yangilangan",
+      "flags": "Belgilar"
+    },
+    "forecastAge": "Prognoz: {time}",
+    "never": "Hali hisoblanmagan",
+    "flagClosure": "Yopilish",
+    "flagOverride": "Qoʻlda holat",
+    "loadMore": "Yana koʻrsatish",
+    "showAll": "Barcha joylarni koʻrsatish",
+    "emptyTitle": "Hozircha joylar yoʻq",
+    "emptyDescription": "Joylar qoʻshilgach shu yerda chiqadi.",
+    "errorTitle": "Holatlarni yuklab boʻlmadi",
+    "errorDescription": "Ulanishni tekshirib, qayta urinib koʻring.",
+    "offlineTitle": "Internet yoʻq",
+    "offlineDescription": "Holatlar ulanish tiklangach yuklanadi."
+  },
+  "place": {
+    "title": "Joy holati",
+    "back": "Barcha holatlar",
+    "loading": "Holatlar yuklanmoqda…",
+    "current": "Joriy holat",
+    "reasons": "Sabablar",
+    "noReasons": "Sabablar yoʻq",
+    "forecastAt": "Prognoz vaqti: {time}",
+    "noForecast": "Hali prognoz yoʻq",
+    "errorTitle": "Joyni yuklab boʻlmadi",
+    "errorDescription": "Ulanishni tekshirib, qayta urinib koʻring.",
+    "notFoundTitle": "Joy topilmadi",
+    "notFoundDescription": "Ehtimol, u oʻchirilgan."
+  },
+  "closuresTable": {
+    "caption": "Bu joyning yopilishlari",
+    "state": "Holati",
+    "active": "Amalda",
+    "ended": "Tugagan",
+    "none": "Hozircha yopilishlar yoʻq"
+  },
+  "overrideCard": {
+    "none": "Qoʻlda belgilangan holat yoʻq",
+    "expires": "Muddati: {time}"
+  },
+  "dialogs": {
+    "endClosure": "Yopilishni tugatish",
+    "endOverride": "Qoʻlda holatni bekor qilish"
+  },
+  "toasts": {
+    "closureAdded": "Yopilish qoʻshildi",
+    "closureEnded": "Yopilish tugatildi",
+    "overrideSet": "Qoʻlda holat oʻrnatildi",
+    "overrideEnded": "Qoʻlda holat bekor qilindi",
+    "alreadyEnded": "Allaqachon tugagan",
+    "error": "Bajarilmadi. Qayta urinib koʻring.",
+    "offline": "Internet yoʻq. Oʻzgartirish uchun ulaning."
+  },
+  "validation": {
+    "startRequired": "Boshlanish vaqtini tanlang.",
+    "dateInvalid": "Toʻgʻri sana va vaqt kiriting.",
+    "endBeforeStart": "Tugash vaqti boshlanishdan keyin boʻlishi kerak.",
+    "reasonRequired": "Sababni oʻzbekcha yozing.",
+    "reasonTooLong": "280 belgidan oshmasin.",
+    "expiryRequired": "Muddatni tanlang.",
+    "expiryPast": "Muddat kelajakda boʻlishi kerak.",
+    "expiryTooFar": "Muddat koʻpi bilan 14 kun oldinga boʻlishi mumkin.",
+    "server": "Bu maydonni tekshiring."
+  }
+}

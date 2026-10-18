@@ -20,6 +20,8 @@ type DataTableProps<TData extends RowData> = {
   /** Column id the server sorted by, for aria-sort on its header. */
   sortedColumnId?: string;
   sortDirection?: "ascending" | "descending";
+  /** Optional `data-testid` per body row. */
+  rowTestId?: (row: TData) => string;
 };
 
 /**
@@ -37,6 +39,7 @@ export function DataTable<TData extends RowData>({
   testId,
   sortedColumnId,
   sortDirection,
+  rowTestId,
 }: DataTableProps<TData>) {
   const table = useTable({ features, columns, data, getRowId });
   const columnCount = columns.length;
@@ -73,7 +76,7 @@ export function DataTable<TData extends RowData>({
                 </tr>
               ))
             : table.getRowModel().rows.map((row) => (
-                <tr key={row.id}>
+                <tr key={row.id} data-testid={rowTestId?.(row.original)}>
                   {row.getAllCells().map((cell) => (
                     <td key={cell.id} className="whitespace-nowrap border-b-2 border-soft px-3 py-3 text-ink">
                       <table.FlexRender cell={cell} />
