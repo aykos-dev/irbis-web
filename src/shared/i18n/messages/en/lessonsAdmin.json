@@ -33,7 +33,6 @@
     "back": "Back to tiers",
     "backToTier": "Back to the tier",
     "editorTitle": "Lesson",
-    "editorSoon": "The lesson editor is not available yet.",
     "columns": {
       "order": "Order",
       "icon": "Icon",
@@ -94,5 +93,55 @@
     "reordered": "Order saved",
     "error": "That did not work. Try again.",
     "offline": "You are offline. Reconnect to make changes."
+  },
+  "editor": {
+    "saveDraft": "Save draft",
+    "publish": "Publish",
+    "unpublish": "Unpublish",
+    "addQuestion": "Add question",
+    "correct": "Correct",
+    "missingCount": "{count, plural, one {# field missing to publish} other {# fields missing to publish}}",
+    "unsaved": "You have unsaved changes. Leave anyway?",
+    "unsavedDescription": "Changes since the last save will be lost.",
+    "leave": "Leave",
+    "imageType": "Use JPEG, PNG or WebP",
+    "imageSize": "Max 2 MB",
+    "title": "Title",
+    "prompt": "Prompt",
+    "hint": "Hint",
+    "options": "Options",
+    "option": "Option {n}",
+    "addOption": "Add option",
+    "removeOption": "Remove option",
+    "explanation": "Explanation",
+    "wrongExplanation": "Wrong-answer explanation",
+    "image": "Image",
+    "imageAlt": "Image for question {n}",
+    "removeImage": "Remove image",
+    "uploading": "Uploading…",
+    "remove": "Remove",
+    "question": "Question {n}",
+    "questions": "Questions",
+    "questionCount": "{count} of {max}",
+    "noQuestions": "No questions yet — add the first one",
+    "removeQuestion": "Remove question",
+    "removeQuestionTitle": "Remove question {n}?",
+    "removeQuestionDescription": "The question is removed from this draft; save to keep the change.",
+    "deleteTitle": "Delete lesson {title}?",
+    "deleteDescription": "The draft lesson is removed for good.",
+    "missing": "Missing",
+    "errorTitle": "Lesson could not be loaded",
+    "errorDescription": "Check your connection and try again.",
+    "locale": {
+      "uz": "Uzbek",
+      "ru": "Russian",
+      "en": "English"
+    },
+    "toasts": {
+      "saved": "Draft saved",
+      "published": "Lesson published",
+      "unpublished": "Lesson unpublished",
+      "deleted": "Lesson deleted"
+    }
   }
 }

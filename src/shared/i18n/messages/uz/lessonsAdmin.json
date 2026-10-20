@@ -33,7 +33,6 @@
     "back": "Bosqichlarga qaytish",
     "backToTier": "Bosqichga qaytish",
     "editorTitle": "Dars",
-    "editorSoon": "Dars muharriri hali mavjud emas.",
     "columns": {
       "order": "Tartib",
       "icon": "Belgi",
@@ -94,5 +93,55 @@
     "reordered": "Tartib saqlandi",
     "error": "Bajarilmadi. Qayta urinib koʻring.",
     "offline": "Internet yoʻq. Oʻzgartirish uchun qayta ulaning."
+  },
+  "editor": {
+    "saveDraft": "Qoralamani saqlash",
+    "publish": "Eʼlon qilish",
+    "unpublish": "Eʼlondan olish",
+    "addQuestion": "Savol qoʻshish",
+    "correct": "Toʻgʻri",
+    "missingCount": "Eʼlon qilish uchun {count} ta maydon toʻldirilmagan",
+    "unsaved": "Saqlanmagan oʻzgarishlar bor. Baribir chiqasizmi?",
+    "unsavedDescription": "Oxirgi saqlashdan keyingi oʻzgarishlar yoʻqoladi.",
+    "leave": "Chiqish",
+    "imageType": "JPEG, PNG yoki WebP dan foydalaning",
+    "imageSize": "Koʻpi bilan 2 MB",
+    "title": "Nomi",
+    "prompt": "Savol matni",
+    "hint": "Maslahat",
+    "options": "Variantlar",
+    "option": "Variant {n}",
+    "addOption": "Variant qoʻshish",
+    "removeOption": "Variantni oʻchirish",
+    "explanation": "Izoh",
+    "wrongExplanation": "Notoʻgʻri javob izohi",
+    "image": "Rasm",
+    "imageAlt": "{n}-savol rasmi",
+    "removeImage": "Rasmni oʻchirish",
+    "uploading": "Yuklanmoqda…",
+    "remove": "Oʻchirish",
+    "question": "{n}-savol",
+    "questions": "Savollar",
+    "questionCount": "{count} / {max}",
+    "noQuestions": "Hali savollar yoʻq — birinchisini qoʻshing",
+    "removeQuestion": "Savolni oʻchirish",
+    "removeQuestionTitle": "{n}-savol oʻchirilsinmi?",
+    "removeQuestionDescription": "Savol qoralamadan olib tashlanadi; oʻzgarishni saqlash uchun saqlang.",
+    "deleteTitle": "{title} darsi oʻchirilsinmi?",
+    "deleteDescription": "Dars qoralamasi butunlay oʻchiriladi.",
+    "missing": "Toʻldirilmagan",
+    "errorTitle": "Darsni yuklab boʻlmadi",
+    "errorDescription": "Ulanishni tekshirib, qayta urinib koʻring.",
+    "locale": {
+      "uz": "Oʻzbekcha",
+      "ru": "Ruscha",
+      "en": "Inglizcha"
+    },
+    "toasts": {
+      "saved": "Qoralama saqlandi",
+      "published": "Dars eʼlon qilindi",
+      "unpublished": "Dars eʼlondan olindi",
+      "deleted": "Dars oʻchirildi"
+    }
   }
 }
