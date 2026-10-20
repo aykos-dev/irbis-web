@@ -3,5 +3,7 @@ export * from './admin-auth/admin-auth';
 export * from './auth/auth';
 export * from './conditions/conditions';
 export * from './health/health';
+export * from './levels/levels';
 export * from './me/me';
 export * from './places/places';
+export * from './qa/qa';

@@ -42,6 +42,10 @@ export const AdminListUsersQueryParams = zod.object({
   "limit": zod.number().min(1).max(adminListUsersQueryLimitMax).default(adminListUsersQueryLimitDefault)
 })
 
+export const adminListUsersResponseItemsItemLevelMax = 7;
+
+
+
 export const AdminListUsersResponse = zod.object({
   "items": zod.array(zod.object({
   "id": zod.uuid(),
@@ -50,7 +54,8 @@ export const AdminListUsersResponse = zod.object({
   "status": zod.enum(['active', 'blocked', 'locked']),
   "joinedAt": zod.iso.datetime({"offset":true}),
   "lastActiveAt": zod.iso.datetime({"offset":true}),
-  "recoveryPhoneMasked": zod.string().nullable()
+  "recoveryPhoneMasked": zod.string().nullable(),
+  "level": zod.int().min(1).max(adminListUsersResponseItemsItemLevelMax).describe('The user\'s current level (User.level).')
 })),
   "nextCursor": zod.string().nullable(),
   "total": zod.number().describe('Users matching the filters, ignoring the cursor.')
@@ -63,6 +68,10 @@ export const AdminGetUserParams = zod.object({
   "id": zod.uuid()
 })
 
+export const adminGetUserResponseLevelMax = 7;
+
+
+
 export const AdminGetUserResponse = zod.object({
   "id": zod.uuid(),
   "username": zod.string(),
@@ -71,13 +80,13 @@ export const AdminGetUserResponse = zod.object({
   "joinedAt": zod.iso.datetime({"offset":true}),
   "lastActiveAt": zod.iso.datetime({"offset":true}),
   "recoveryPhoneMasked": zod.string().nullable(),
+  "level": zod.int().min(1).max(adminGetUserResponseLevelMax).describe('The user\'s current level (User.level).'),
   "locale": zod.enum(['uz', 'ru', 'en']),
   "recoveryPhoneVerified": zod.boolean(),
   "blockedAt": zod.iso.datetime({"offset":true}).nullable(),
   "blockReasonCode": zod.union([zod.enum(['spam', 'harassment', 'unsafe', 'fake_content', 'other']),zod.null()]),
   "lockedForSec": zod.number().nullable().describe('Seconds the log-in lockout still lasts; null when not locked.'),
-  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).'),
-  "level": zod.number().nullable().describe('Always null until the levels feature exists.')
+  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).')
 })
 
 /**
@@ -96,6 +105,10 @@ export const AdminBlockUserBody = zod.object({
   "note": zod.string().max(adminBlockUserBodyNoteMax)
 })
 
+export const adminBlockUserResponseLevelMax = 7;
+
+
+
 export const AdminBlockUserResponse = zod.object({
   "id": zod.uuid(),
   "username": zod.string(),
@@ -104,13 +117,13 @@ export const AdminBlockUserResponse = zod.object({
   "joinedAt": zod.iso.datetime({"offset":true}),
   "lastActiveAt": zod.iso.datetime({"offset":true}),
   "recoveryPhoneMasked": zod.string().nullable(),
+  "level": zod.int().min(1).max(adminBlockUserResponseLevelMax).describe('The user\'s current level (User.level).'),
   "locale": zod.enum(['uz', 'ru', 'en']),
   "recoveryPhoneVerified": zod.boolean(),
   "blockedAt": zod.iso.datetime({"offset":true}).nullable(),
   "blockReasonCode": zod.union([zod.enum(['spam', 'harassment', 'unsafe', 'fake_content', 'other']),zod.null()]),
   "lockedForSec": zod.number().nullable().describe('Seconds the log-in lockout still lasts; null when not locked.'),
-  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).'),
-  "level": zod.number().nullable().describe('Always null until the levels feature exists.')
+  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).')
 })
 
 /**
@@ -129,6 +142,10 @@ export const AdminUnblockUserBody = zod.object({
   "note": zod.string().max(adminUnblockUserBodyNoteMax)
 })
 
+export const adminUnblockUserResponseLevelMax = 7;
+
+
+
 export const AdminUnblockUserResponse = zod.object({
   "id": zod.uuid(),
   "username": zod.string(),
@@ -137,13 +154,13 @@ export const AdminUnblockUserResponse = zod.object({
   "joinedAt": zod.iso.datetime({"offset":true}),
   "lastActiveAt": zod.iso.datetime({"offset":true}),
   "recoveryPhoneMasked": zod.string().nullable(),
+  "level": zod.int().min(1).max(adminUnblockUserResponseLevelMax).describe('The user\'s current level (User.level).'),
   "locale": zod.enum(['uz', 'ru', 'en']),
   "recoveryPhoneVerified": zod.boolean(),
   "blockedAt": zod.iso.datetime({"offset":true}).nullable(),
   "blockReasonCode": zod.union([zod.enum(['spam', 'harassment', 'unsafe', 'fake_content', 'other']),zod.null()]),
   "lockedForSec": zod.number().nullable().describe('Seconds the log-in lockout still lasts; null when not locked.'),
-  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).'),
-  "level": zod.number().nullable().describe('Always null until the levels feature exists.')
+  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).')
 })
 
 /**
@@ -180,6 +197,10 @@ export const AdminSetUserRecoveryPhoneBody = zod.object({
   "note": zod.string().max(adminSetUserRecoveryPhoneBodyNoteMax)
 })
 
+export const adminSetUserRecoveryPhoneResponseLevelMax = 7;
+
+
+
 export const AdminSetUserRecoveryPhoneResponse = zod.object({
   "id": zod.uuid(),
   "username": zod.string(),
@@ -188,13 +209,13 @@ export const AdminSetUserRecoveryPhoneResponse = zod.object({
   "joinedAt": zod.iso.datetime({"offset":true}),
   "lastActiveAt": zod.iso.datetime({"offset":true}),
   "recoveryPhoneMasked": zod.string().nullable(),
+  "level": zod.int().min(1).max(adminSetUserRecoveryPhoneResponseLevelMax).describe('The user\'s current level (User.level).'),
   "locale": zod.enum(['uz', 'ru', 'en']),
   "recoveryPhoneVerified": zod.boolean(),
   "blockedAt": zod.iso.datetime({"offset":true}).nullable(),
   "blockReasonCode": zod.union([zod.enum(['spam', 'harassment', 'unsafe', 'fake_content', 'other']),zod.null()]),
   "lockedForSec": zod.number().nullable().describe('Seconds the log-in lockout still lasts; null when not locked.'),
-  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).'),
-  "level": zod.number().nullable().describe('Always null until the levels feature exists.')
+  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).')
 })
 
 /**
@@ -213,6 +234,10 @@ export const AdminSetUserRoleBody = zod.object({
   "note": zod.string().max(adminSetUserRoleBodyNoteMax)
 })
 
+export const adminSetUserRoleResponseLevelMax = 7;
+
+
+
 export const AdminSetUserRoleResponse = zod.object({
   "id": zod.uuid(),
   "username": zod.string(),
@@ -221,13 +246,13 @@ export const AdminSetUserRoleResponse = zod.object({
   "joinedAt": zod.iso.datetime({"offset":true}),
   "lastActiveAt": zod.iso.datetime({"offset":true}),
   "recoveryPhoneMasked": zod.string().nullable(),
+  "level": zod.int().min(1).max(adminSetUserRoleResponseLevelMax).describe('The user\'s current level (User.level).'),
   "locale": zod.enum(['uz', 'ru', 'en']),
   "recoveryPhoneVerified": zod.boolean(),
   "blockedAt": zod.iso.datetime({"offset":true}).nullable(),
   "blockReasonCode": zod.union([zod.enum(['spam', 'harassment', 'unsafe', 'fake_content', 'other']),zod.null()]),
   "lockedForSec": zod.number().nullable().describe('Seconds the log-in lockout still lasts; null when not locked.'),
-  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).'),
-  "level": zod.number().nullable().describe('Always null until the levels feature exists.')
+  "sessionsCount": zod.number().describe('Signed-in sessions (refresh tokens still valid).')
 })
 
 /**
@@ -507,5 +532,601 @@ export const AdminEndOverrideResponse = zod.object({
   "createdAt": zod.iso.datetime({"offset":true}),
   "endedAt": zod.iso.datetime({"offset":true}).nullable(),
   "active": zod.boolean().describe('Not ended and not expired.')
+})
+
+/**
+ * @summary Every lesson tier, by order, with lesson counts
+ */
+export const AdminListLessonTiersResponse = zod.object({
+  "items": zod.array(zod.object({
+  "id": zod.uuid(),
+  "key": zod.string(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "colour": zod.string(),
+  "order": zod.int(),
+  "lessonCount": zod.int(),
+  "publishedCount": zod.int()
+}))
+})
+
+/**
+ * @summary Create a tier, appended last
+ */
+export const adminCreateLessonTierBodyKeyRegExp = new RegExp('^[a-z0-9-]{1,20}$');
+export const adminCreateLessonTierBodyTitleUzMax = 300;
+
+export const adminCreateLessonTierBodyTitleRuMax = 300;
+
+export const adminCreateLessonTierBodyTitleEnMax = 300;
+
+export const adminCreateLessonTierBodyColourRegExp = new RegExp('^#[0-9A-Fa-f]{6}$');
+
+
+export const AdminCreateLessonTierBody = zod.object({
+  "key": zod.string().regex(adminCreateLessonTierBodyKeyRegExp).describe('Unique and immutable; level gates use it.'),
+  "title": zod.object({
+  "uz": zod.string().max(adminCreateLessonTierBodyTitleUzMax),
+  "ru": zod.string().max(adminCreateLessonTierBodyTitleRuMax),
+  "en": zod.string().max(adminCreateLessonTierBodyTitleEnMax)
+}),
+  "colour": zod.string().regex(adminCreateLessonTierBodyColourRegExp)
+})
+
+export const AdminCreateLessonTierResponse = zod.object({
+  "id": zod.uuid(),
+  "key": zod.string(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "colour": zod.string(),
+  "order": zod.int(),
+  "lessonCount": zod.int(),
+  "publishedCount": zod.int()
+})
+
+/**
+ * @summary Reorder tiers; ids must be every tier id
+ */
+export const adminReorderLessonTiersBodyIdsMax = 500;
+
+
+
+export const AdminReorderLessonTiersBody = zod.object({
+  "ids": zod.array(zod.uuid()).max(adminReorderLessonTiersBodyIdsMax).describe('Every id of the list, in the new order.')
+})
+
+export const AdminReorderLessonTiersResponse = zod.object({
+  "items": zod.array(zod.object({
+  "id": zod.uuid(),
+  "key": zod.string(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "colour": zod.string(),
+  "order": zod.int(),
+  "lessonCount": zod.int(),
+  "publishedCount": zod.int()
+}))
+})
+
+/**
+ * @summary Change a tier's title or colour (the key never changes)
+ */
+export const AdminUpdateLessonTierParams = zod.object({
+  "id": zod.uuid()
+})
+
+export const adminUpdateLessonTierBodyTitleUzMax = 300;
+
+export const adminUpdateLessonTierBodyTitleRuMax = 300;
+
+export const adminUpdateLessonTierBodyTitleEnMax = 300;
+
+export const adminUpdateLessonTierBodyColourRegExp = new RegExp('^#[0-9A-Fa-f]{6}$');
+
+
+export const AdminUpdateLessonTierBody = zod.object({
+  "title": zod.object({
+  "uz": zod.string().max(adminUpdateLessonTierBodyTitleUzMax),
+  "ru": zod.string().max(adminUpdateLessonTierBodyTitleRuMax),
+  "en": zod.string().max(adminUpdateLessonTierBodyTitleEnMax)
+}).optional(),
+  "colour": zod.string().regex(adminUpdateLessonTierBodyColourRegExp).optional()
+})
+
+export const AdminUpdateLessonTierResponse = zod.object({
+  "id": zod.uuid(),
+  "key": zod.string(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "colour": zod.string(),
+  "order": zod.int(),
+  "lessonCount": zod.int(),
+  "publishedCount": zod.int()
+})
+
+/**
+ * @summary Delete a tier without lessons
+ */
+export const AdminDeleteLessonTierParams = zod.object({
+  "id": zod.uuid()
+})
+
+export const AdminDeleteLessonTierResponse = zod.void()
+
+/**
+ * @summary A tier's lessons, by order
+ */
+export const AdminListTierLessonsParams = zod.object({
+  "id": zod.uuid()
+})
+
+export const AdminListTierLessonsResponse = zod.object({
+  "items": zod.array(zod.object({
+  "id": zod.uuid(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "icon": zod.enum(['compass', 'leaf', 'padlock', 'cloud', 'paw', 'first-aid', 'mountain', 'waves', 'avalanche', 'bolt']),
+  "order": zod.int(),
+  "status": zod.enum(['draft', 'published']),
+  "questionCount": zod.int(),
+  "publishedAt": zod.iso.datetime({"offset":true}).nullable(),
+  "updatedAt": zod.iso.datetime({"offset":true})
+}))
+})
+
+/**
+ * @summary Reorder a tier's lessons; ids must be exactly its lessons
+ */
+export const AdminReorderTierLessonsParams = zod.object({
+  "id": zod.uuid()
+})
+
+export const adminReorderTierLessonsBodyIdsMax = 500;
+
+
+
+export const AdminReorderTierLessonsBody = zod.object({
+  "ids": zod.array(zod.uuid()).max(adminReorderTierLessonsBodyIdsMax).describe('Every id of the list, in the new order.')
+})
+
+export const AdminReorderTierLessonsResponse = zod.object({
+  "items": zod.array(zod.object({
+  "id": zod.uuid(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "icon": zod.enum(['compass', 'leaf', 'padlock', 'cloud', 'paw', 'first-aid', 'mountain', 'waves', 'avalanche', 'bolt']),
+  "order": zod.int(),
+  "status": zod.enum(['draft', 'published']),
+  "questionCount": zod.int(),
+  "publishedAt": zod.iso.datetime({"offset":true}).nullable(),
+  "updatedAt": zod.iso.datetime({"offset":true})
+}))
+})
+
+/**
+ * @summary Create a draft lesson, appended last in its tier
+ */
+export const adminCreateLessonBodyTitleUzMax = 300;
+
+export const adminCreateLessonBodyTitleRuMax = 300;
+
+export const adminCreateLessonBodyTitleEnMax = 300;
+
+
+
+export const AdminCreateLessonBody = zod.object({
+  "tierId": zod.uuid(),
+  "title": zod.object({
+  "uz": zod.string().max(adminCreateLessonBodyTitleUzMax),
+  "ru": zod.string().max(adminCreateLessonBodyTitleRuMax),
+  "en": zod.string().max(adminCreateLessonBodyTitleEnMax)
+}),
+  "icon": zod.enum(['compass', 'leaf', 'padlock', 'cloud', 'paw', 'first-aid', 'mountain', 'waves', 'avalanche', 'bolt'])
+})
+
+export const AdminCreateLessonResponse = zod.object({
+  "id": zod.uuid(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "icon": zod.enum(['compass', 'leaf', 'padlock', 'cloud', 'paw', 'first-aid', 'mountain', 'waves', 'avalanche', 'bolt']),
+  "order": zod.int(),
+  "status": zod.enum(['draft', 'published']),
+  "questionCount": zod.int(),
+  "publishedAt": zod.iso.datetime({"offset":true}).nullable(),
+  "updatedAt": zod.iso.datetime({"offset":true}),
+  "tierId": zod.uuid(),
+  "questions": zod.array(zod.object({
+  "id": zod.uuid(),
+  "order": zod.int(),
+  "prompt": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "hint": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "options": zod.array(zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+})),
+  "correctIndex": zod.int(),
+  "explanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "wrongExplanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "image": zod.object({
+  "key": zod.string(),
+  "url": zod.string()
+}).nullable()
+}))
+})
+
+/**
+ * @summary A lesson with its questions
+ */
+export const AdminGetLessonParams = zod.object({
+  "id": zod.uuid()
+})
+
+export const AdminGetLessonResponse = zod.object({
+  "id": zod.uuid(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "icon": zod.enum(['compass', 'leaf', 'padlock', 'cloud', 'paw', 'first-aid', 'mountain', 'waves', 'avalanche', 'bolt']),
+  "order": zod.int(),
+  "status": zod.enum(['draft', 'published']),
+  "questionCount": zod.int(),
+  "publishedAt": zod.iso.datetime({"offset":true}).nullable(),
+  "updatedAt": zod.iso.datetime({"offset":true}),
+  "tierId": zod.uuid(),
+  "questions": zod.array(zod.object({
+  "id": zod.uuid(),
+  "order": zod.int(),
+  "prompt": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "hint": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "options": zod.array(zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+})),
+  "correctIndex": zod.int(),
+  "explanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "wrongExplanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "image": zod.object({
+  "key": zod.string(),
+  "url": zod.string()
+}).nullable()
+}))
+})
+
+/**
+ * @summary Replace title, icon and all questions; a published lesson must stay publishable
+ */
+export const AdminReplaceLessonParams = zod.object({
+  "id": zod.uuid()
+})
+
+export const adminReplaceLessonBodyTitleUzMax = 300;
+
+export const adminReplaceLessonBodyTitleRuMax = 300;
+
+export const adminReplaceLessonBodyTitleEnMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemPromptUzMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemPromptRuMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemPromptEnMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemHintOneUzMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemHintOneRuMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemHintOneEnMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemOptionsItemUzMax = 120;
+
+export const adminReplaceLessonBodyQuestionsItemOptionsItemRuMax = 120;
+
+export const adminReplaceLessonBodyQuestionsItemOptionsItemEnMax = 120;
+
+export const adminReplaceLessonBodyQuestionsItemOptionsMin = 2;
+export const adminReplaceLessonBodyQuestionsItemOptionsMax = 4;
+
+export const adminReplaceLessonBodyQuestionsItemCorrectIndexMin = 0;
+
+export const adminReplaceLessonBodyQuestionsItemExplanationUzMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemExplanationRuMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemExplanationEnMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemWrongExplanationOneUzMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemWrongExplanationOneRuMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemWrongExplanationOneEnMax = 300;
+
+export const adminReplaceLessonBodyQuestionsItemImageOneKeyMax = 200;
+
+export const adminReplaceLessonBodyQuestionsMax = 15;
+
+
+
+export const AdminReplaceLessonBody = zod.object({
+  "title": zod.object({
+  "uz": zod.string().max(adminReplaceLessonBodyTitleUzMax),
+  "ru": zod.string().max(adminReplaceLessonBodyTitleRuMax),
+  "en": zod.string().max(adminReplaceLessonBodyTitleEnMax)
+}),
+  "icon": zod.enum(['compass', 'leaf', 'padlock', 'cloud', 'paw', 'first-aid', 'mountain', 'waves', 'avalanche', 'bolt']),
+  "questions": zod.array(zod.object({
+  "prompt": zod.object({
+  "uz": zod.string().max(adminReplaceLessonBodyQuestionsItemPromptUzMax),
+  "ru": zod.string().max(adminReplaceLessonBodyQuestionsItemPromptRuMax),
+  "en": zod.string().max(adminReplaceLessonBodyQuestionsItemPromptEnMax)
+}),
+  "hint": zod.object({
+  "uz": zod.string().max(adminReplaceLessonBodyQuestionsItemHintOneUzMax),
+  "ru": zod.string().max(adminReplaceLessonBodyQuestionsItemHintOneRuMax),
+  "en": zod.string().max(adminReplaceLessonBodyQuestionsItemHintOneEnMax)
+}).nullish(),
+  "options": zod.array(zod.object({
+  "uz": zod.string().max(adminReplaceLessonBodyQuestionsItemOptionsItemUzMax),
+  "ru": zod.string().max(adminReplaceLessonBodyQuestionsItemOptionsItemRuMax),
+  "en": zod.string().max(adminReplaceLessonBodyQuestionsItemOptionsItemEnMax)
+})).min(adminReplaceLessonBodyQuestionsItemOptionsMin).max(adminReplaceLessonBodyQuestionsItemOptionsMax),
+  "correctIndex": zod.int().min(adminReplaceLessonBodyQuestionsItemCorrectIndexMin).describe('Index into options.'),
+  "explanation": zod.object({
+  "uz": zod.string().max(adminReplaceLessonBodyQuestionsItemExplanationUzMax),
+  "ru": zod.string().max(adminReplaceLessonBodyQuestionsItemExplanationRuMax),
+  "en": zod.string().max(adminReplaceLessonBodyQuestionsItemExplanationEnMax)
+}),
+  "wrongExplanation": zod.object({
+  "uz": zod.string().max(adminReplaceLessonBodyQuestionsItemWrongExplanationOneUzMax),
+  "ru": zod.string().max(adminReplaceLessonBodyQuestionsItemWrongExplanationOneRuMax),
+  "en": zod.string().max(adminReplaceLessonBodyQuestionsItemWrongExplanationOneEnMax)
+}).nullish(),
+  "image": zod.object({
+  "key": zod.string().max(adminReplaceLessonBodyQuestionsItemImageOneKeyMax)
+}).nullish()
+})).max(adminReplaceLessonBodyQuestionsMax).describe('Array order = question order.')
+})
+
+export const AdminReplaceLessonResponse = zod.object({
+  "id": zod.uuid(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "icon": zod.enum(['compass', 'leaf', 'padlock', 'cloud', 'paw', 'first-aid', 'mountain', 'waves', 'avalanche', 'bolt']),
+  "order": zod.int(),
+  "status": zod.enum(['draft', 'published']),
+  "questionCount": zod.int(),
+  "publishedAt": zod.iso.datetime({"offset":true}).nullable(),
+  "updatedAt": zod.iso.datetime({"offset":true}),
+  "tierId": zod.uuid(),
+  "questions": zod.array(zod.object({
+  "id": zod.uuid(),
+  "order": zod.int(),
+  "prompt": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "hint": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "options": zod.array(zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+})),
+  "correctIndex": zod.int(),
+  "explanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "wrongExplanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "image": zod.object({
+  "key": zod.string(),
+  "url": zod.string()
+}).nullable()
+}))
+})
+
+/**
+ * @summary Delete a draft lesson
+ */
+export const AdminDeleteLessonParams = zod.object({
+  "id": zod.uuid()
+})
+
+export const AdminDeleteLessonResponse = zod.void()
+
+/**
+ * @summary Publish a lesson that passes every publish rule
+ */
+export const AdminPublishLessonParams = zod.object({
+  "id": zod.uuid()
+})
+
+export const AdminPublishLessonResponse = zod.object({
+  "id": zod.uuid(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "icon": zod.enum(['compass', 'leaf', 'padlock', 'cloud', 'paw', 'first-aid', 'mountain', 'waves', 'avalanche', 'bolt']),
+  "order": zod.int(),
+  "status": zod.enum(['draft', 'published']),
+  "questionCount": zod.int(),
+  "publishedAt": zod.iso.datetime({"offset":true}).nullable(),
+  "updatedAt": zod.iso.datetime({"offset":true}),
+  "tierId": zod.uuid(),
+  "questions": zod.array(zod.object({
+  "id": zod.uuid(),
+  "order": zod.int(),
+  "prompt": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "hint": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "options": zod.array(zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+})),
+  "correctIndex": zod.int(),
+  "explanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "wrongExplanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "image": zod.object({
+  "key": zod.string(),
+  "url": zod.string()
+}).nullable()
+}))
+})
+
+/**
+ * @summary Back to draft (publishedAt keeps the first publish time)
+ */
+export const AdminUnpublishLessonParams = zod.object({
+  "id": zod.uuid()
+})
+
+export const AdminUnpublishLessonResponse = zod.object({
+  "id": zod.uuid(),
+  "title": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "icon": zod.enum(['compass', 'leaf', 'padlock', 'cloud', 'paw', 'first-aid', 'mountain', 'waves', 'avalanche', 'bolt']),
+  "order": zod.int(),
+  "status": zod.enum(['draft', 'published']),
+  "questionCount": zod.int(),
+  "publishedAt": zod.iso.datetime({"offset":true}).nullable(),
+  "updatedAt": zod.iso.datetime({"offset":true}),
+  "tierId": zod.uuid(),
+  "questions": zod.array(zod.object({
+  "id": zod.uuid(),
+  "order": zod.int(),
+  "prompt": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "hint": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "options": zod.array(zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+})),
+  "correctIndex": zod.int(),
+  "explanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}),
+  "wrongExplanation": zod.object({
+  "uz": zod.string(),
+  "ru": zod.string(),
+  "en": zod.string()
+}).nullable(),
+  "image": zod.object({
+  "key": zod.string(),
+  "url": zod.string()
+}).nullable()
+}))
+})
+
+/**
+ * @summary Upload a question image (JPEG/PNG/WebP, ≤ 2 MB); stored re-encoded, longest side ≤ 1600 px, no metadata
+ */
+export const AdminUploadLessonImageBody = zod.object({
+  "file": zod.instanceof(Blob)
+})
+
+export const AdminUploadLessonImageResponse = zod.object({
+  "key": zod.string(),
+  "url": zod.string(),
+  "width": zod.int(),
+  "height": zod.int()
 })
 

@@ -1,0 +1,98 @@
+{
+  "nav": "Lessons",
+  "tiers": {
+    "title": "Lesson tiers",
+    "description": "Tiers group lessons; their order is the order in the app.",
+    "new": "New tier",
+    "edit": "Edit tier",
+    "caption": "Lesson tiers",
+    "deleteBlocked": "Remove its lessons first",
+    "deleteTitle": "Delete tier {title}?",
+    "deleteDescription": "The tier is removed for good.",
+    "emptyTitle": "No tiers yet",
+    "emptyDescription": "Create the first tier, then add lessons to it.",
+    "errorTitle": "Tiers could not be loaded",
+    "errorDescription": "Check your connection and try again.",
+    "columns": {
+      "order": "Order",
+      "colour": "Colour",
+      "title": "Title",
+      "key": "Key",
+      "lessons": "Lessons",
+      "published": "Published",
+      "actions": "Actions"
+    }
+  },
+  "lessons": {
+    "new": "New lesson",
+    "caption": "Lessons in this tier",
+    "empty": "No lessons yet — create the first one",
+    "errorTitle": "Lessons could not be loaded",
+    "errorDescription": "Check your connection and try again.",
+    "notFound": "This tier does not exist.",
+    "back": "Back to tiers",
+    "backToTier": "Back to the tier",
+    "editorTitle": "Lesson",
+    "editorSoon": "The lesson editor is not available yet.",
+    "columns": {
+      "order": "Order",
+      "icon": "Icon",
+      "title": "Title",
+      "status": "Status",
+      "questions": "Questions",
+      "updated": "Updated",
+      "actions": "Actions"
+    }
+  },
+  "status": {
+    "draft": "Draft",
+    "published": "Published"
+  },
+  "field": {
+    "key": "Key",
+    "keyHint": "Lowercase letters, digits and dashes, up to 20. It cannot be changed later.",
+    "titleUz": "Title (Uzbek)",
+    "titleRu": "Title (Russian)",
+    "titleEn": "Title (English)",
+    "colour": "Colour",
+    "colourPicker": "Pick a colour",
+    "icon": "Icon"
+  },
+  "icons": {
+    "compass": "Compass",
+    "leaf": "Leaf",
+    "padlock": "Padlock",
+    "cloud": "Cloud",
+    "paw": "Paw",
+    "first-aid": "First aid",
+    "mountain": "Mountain",
+    "waves": "Waves",
+    "avalanche": "Avalanche",
+    "bolt": "Bolt"
+  },
+  "validation": {
+    "keyInvalid": "Use 1–20 lowercase letters, digits or dashes.",
+    "titleRequired": "Write a title.",
+    "titleTooLong": "Keep it to 300 characters or fewer.",
+    "colourInvalid": "Use a colour like #1A7F6E.",
+    "server": "Check this field."
+  },
+  "keyTaken": "This key is already used",
+  "actions": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "create": "Create",
+    "moveUp": "Move up",
+    "moveDown": "Move down"
+  },
+  "toasts": {
+    "tierCreated": "Tier created",
+    "tierSaved": "Tier saved",
+    "tierDeleted": "Tier deleted",
+    "lessonCreated": "Lesson created",
+    "reordered": "Order saved",
+    "error": "That did not work. Try again.",
+    "offline": "You are offline. Reconnect to make changes."
+  }
+}

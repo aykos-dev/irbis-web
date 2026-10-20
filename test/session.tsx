@@ -15,6 +15,8 @@ export const ADMIN_ME: MeResponseDto = {
   hasRecoveryPhone: false,
   recoveryPhonePending: false,
   createdAt: "2026-10-01T08:00:00.000Z",
+  level: 1,
+  xpTotal: 0,
 };
 
 /** Renders a feature as a signed-in admin without running the refresh bootstrap. */

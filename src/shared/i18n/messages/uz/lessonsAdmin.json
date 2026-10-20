@@ -1,0 +1,98 @@
+{
+  "nav": "Darslar",
+  "tiers": {
+    "title": "Dars bosqichlari",
+    "description": "Bosqichlar darslarni guruhlaydi; tartibi ilovadagi tartib bilan bir xil.",
+    "new": "Yangi bosqich",
+    "edit": "Bosqichni tahrirlash",
+    "caption": "Dars bosqichlari",
+    "deleteBlocked": "Avval darslarni oʻchiring",
+    "deleteTitle": "{title} bosqichi oʻchirilsinmi?",
+    "deleteDescription": "Bosqich butunlay oʻchiriladi.",
+    "emptyTitle": "Hozircha bosqich yoʻq",
+    "emptyDescription": "Birinchi bosqichni yarating, keyin unga darslar qoʻshing.",
+    "errorTitle": "Bosqichlarni yuklab boʻlmadi",
+    "errorDescription": "Ulanishni tekshirib, qayta urinib koʻring.",
+    "columns": {
+      "order": "Tartib",
+      "colour": "Rang",
+      "title": "Nomi",
+      "key": "Kalit",
+      "lessons": "Darslar",
+      "published": "Eʼlon qilingan",
+      "actions": "Amallar"
+    }
+  },
+  "lessons": {
+    "new": "Yangi dars",
+    "caption": "Ushbu bosqichdagi darslar",
+    "empty": "Hozircha dars yoʻq — birinchisini yarating",
+    "errorTitle": "Darslarni yuklab boʻlmadi",
+    "errorDescription": "Ulanishni tekshirib, qayta urinib koʻring.",
+    "notFound": "Bunday bosqich yoʻq.",
+    "back": "Bosqichlarga qaytish",
+    "backToTier": "Bosqichga qaytish",
+    "editorTitle": "Dars",
+    "editorSoon": "Dars muharriri hali mavjud emas.",
+    "columns": {
+      "order": "Tartib",
+      "icon": "Belgi",
+      "title": "Nomi",
+      "status": "Holati",
+      "questions": "Savollar",
+      "updated": "Yangilangan",
+      "actions": "Amallar"
+    }
+  },
+  "status": {
+    "draft": "Qoralama",
+    "published": "Eʼlon qilingan"
+  },
+  "field": {
+    "key": "Kalit",
+    "keyHint": "Kichik lotin harflari, raqamlar va chiziqchalar, 20 tagacha. Keyin oʻzgartirib boʻlmaydi.",
+    "titleUz": "Nomi (oʻzbekcha)",
+    "titleRu": "Nomi (ruscha)",
+    "titleEn": "Nomi (inglizcha)",
+    "colour": "Rang",
+    "colourPicker": "Rang tanlash",
+    "icon": "Belgi"
+  },
+  "icons": {
+    "compass": "Kompas",
+    "leaf": "Barg",
+    "padlock": "Qulf",
+    "cloud": "Bulut",
+    "paw": "Panja",
+    "first-aid": "Birinchi yordam",
+    "mountain": "Togʻ",
+    "waves": "Toʻlqinlar",
+    "avalanche": "Qor koʻchkisi",
+    "bolt": "Chaqmoq"
+  },
+  "validation": {
+    "keyInvalid": "1–20 ta kichik lotin harfi, raqam yoki chiziqcha ishlating.",
+    "titleRequired": "Nomini yozing.",
+    "titleTooLong": "300 belgidan oshmasin.",
+    "colourInvalid": "Rangni #1A7F6E koʻrinishida kiriting.",
+    "server": "Bu maydonni tekshiring."
+  },
+  "keyTaken": "Bu kalit band",
+  "actions": {
+    "edit": "Tahrirlash",
+    "delete": "Oʻchirish",
+    "save": "Saqlash",
+    "create": "Yaratish",
+    "moveUp": "Yuqoriga",
+    "moveDown": "Pastga"
+  },
+  "toasts": {
+    "tierCreated": "Bosqich yaratildi",
+    "tierSaved": "Bosqich saqlandi",
+    "tierDeleted": "Bosqich oʻchirildi",
+    "lessonCreated": "Dars yaratildi",
+    "reordered": "Tartib saqlandi",
+    "error": "Bajarilmadi. Qayta urinib koʻring.",
+    "offline": "Internet yoʻq. Oʻzgartirish uchun qayta ulaning."
+  }
+}

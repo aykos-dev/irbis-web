@@ -1,6 +1,6 @@
 "use client";
 
-import { CloudSun, LayoutDashboard, Users, type LucideIcon } from "lucide-react";
+import { BookOpen, CloudSun, LayoutDashboard, Users, type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -10,8 +10,8 @@ import { BrandMark } from "@/shared/components/layout/brand-mark";
 import { cn } from "@/shared/lib/cn";
 
 type NavItem = {
-  href: "/" | "/users" | "/conditions";
-  labelKey: "common.nav.dashboard" | "common.nav.users" | "conditions.nav";
+  href: "/" | "/users" | "/conditions" | "/lessons";
+  labelKey: "common.nav.dashboard" | "common.nav.users" | "conditions.nav" | "lessonsAdmin.nav";
   icon: LucideIcon;
 };
 
@@ -19,6 +19,7 @@ const NAV_ITEMS: readonly NavItem[] = [
   { href: "/", labelKey: "common.nav.dashboard", icon: LayoutDashboard },
   { href: "/users", labelKey: "common.nav.users", icon: Users },
   { href: "/conditions", labelKey: "conditions.nav", icon: CloudSun },
+  { href: "/lessons", labelKey: "lessonsAdmin.nav", icon: BookOpen },
 ];
 
 function isActive(pathname: string, href: string): boolean {
