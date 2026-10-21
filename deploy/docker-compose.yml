@@ -1,0 +1,18 @@
+# Dev server (devadmin.wayout.uz). global-nginx reaches irbis-web by name over gateway_net.
+name: irbis-web
+
+services:
+  web:
+    build:
+      context: ..
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://devapi.wayout.uz}
+        NEXT_PUBLIC_ENV: ${NEXT_PUBLIC_ENV:-dev}
+    image: irbis-web:latest
+    container_name: irbis-web
+    restart: unless-stopped
+    networks: [gateway_net]
+
+networks:
+  gateway_net:
+    external: true
